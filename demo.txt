@@ -1,1 +1,24 @@
+cdf> psql csc343h-caoming4
+psql (10.19 (Ubuntu 10.19-0ubuntu0.18.04.1), server 10.18 (Ubuntu 10.18-0ubuntu0.18.04.1))
+Type "help" for help.
 
+--- (a) Load schema and data --------------------------------------------------
+csc343h-caoming4 => \i <Table>
+
+
+--- (b) Run \d on each table --------------------------------------------------
+
+csc343h-dianeh=> \d Wards
+-- Display the table here --
+-- ... --
+
+
+--- (c) Run SELECT count(*) on each table -------------------------------------
+
+
+
+--- (d) Show some rows from each table ----------------------------------------
+
+
+
+--- REMEMBER TO ADD THE RESULTS OF THE PSQL ONTO THIS FILE ---
