@@ -1,6 +1,6 @@
 -- LOADING SCHEMA AND DATA
 \i schema.ddl
-\i sample-data.csv
+\COPY Wards FROM ward-data.csv with csv
 
 -- INSPECTING EVERY TABLE
 -- \d Jobs

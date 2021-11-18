@@ -46,7 +46,7 @@ CREATE TABLE Wards (
 CREATE TABLE NewEstablishments (
     wardName TEXT NOT NULL,
     year INTEGER NOT NULL,
-    newEstablishments INTEGER NOT NULL
+    newEstablishments INTEGER NOT NULL,
 
     PRIMARY KEY (wardName, year, newEstablishments),
     FOREIGN KEY (wardName) REFERENCES Wards(wardName),
