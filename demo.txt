@@ -18,7 +18,7 @@ SELECT count(*) FROM JobSectors;
 SELECT count(*) FROM ClosedCompanies;
 SELECT count(*) FROM CityOfTorontoStatistics;
 
--- SOME DATA FROM EVERY TABLE *** NEED TO INCLUDE WHERE
+-- SOME DATA FROM EVERY TABLE *** NEED TO INCLUDE WHERE TO LIMIT DATA
 SELECT * FROM Jobs;
 SELECT * FROM Companies;
 SELECT * FROM Wards;
