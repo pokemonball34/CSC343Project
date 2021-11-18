@@ -3,47 +3,64 @@ CREATE SCHEMA JobMarket;
 SET SEARCH_PATH TO JobMarket;
 
 -- Jobs should be removed but am detailing for clarity
-CREATE TABLE Jobs (
-    ID INTEGER,
-    role TEXT DEFAULT "Employee",
-    companyName TEXT NOT NULL,
-    subSector TEXT NOT NULL,
-    numOpenings INT DEFAULT 1,
-    workFromHome BOOLEAN NOT NULL,
-    wardName TEXT NOT NULL,
-    datePosted DATE NOT NULL,
-    PRIMARY KEY (ID),
+-- CREATE TABLE Jobs (
+--     ID INTEGER,
+--     role TEXT DEFAULT "Employee",
+--     companyName TEXT NOT NULL,
+--     subSector TEXT NOT NULL,
+--     numOpenings INT DEFAULT 1,
+--     workFromHome BOOLEAN NOT NULL,
+--     wardName TEXT NOT NULL,
+--     datePosted DATE NOT NULL,
+--     PRIMARY KEY (ID),
 
-);
+-- );
 
--- Jobs should be removed but am detailing for clarity
+-- CHANGED: To Be Reviewed
 CREATE TABLE Companies (
+    companyID INTEGER NOT NULL,
     companyName TEXT NOT NULL,
     wardName TEXT NOT NULL,
     numOfEmployees INTEGER NOT NULL,
-    year INTEGER NOT NULL
+
+    PRIMARY KEY (companyID)
+    FOREIGN KEY (wardName) REFERENCES Wards(wardName),
 );
 
 
 CREATE TABLE JobSectors (
     sectorName TEXT NOT NULL,
     subSector TEXT NOT NULL,
-    growthRate FLOAT NOT NULL
+    -- growthRate FLOAT NOT NULL,
+
+    PRIMARY KEY (sectorName, subSector)
 );
 
 
 CREATE TABLE Wards (
     wardName TEXT NOT NULL,
+    PRIMARY KEY (wardName)
+);
+
+-- NEW TABLE FOR NEW ESTABLISHMENTS
+CREATE TABLE NewEstablishments (
+    wardName TEXT NOT NULL,
     year INTEGER NOT NULL,
     newEstablishments INTEGER NOT NULL
+
+    PRIMARY KEY (wardName, year, newEstablishments),
+    FOREIGN KEY (wardName) REFERENCES Wards(wardName),
+    CONSTRAINT validyear
+        CHECK (year = 2019 OR year = 2020 OR year = 2021)
 );
 
 
-CREATE TABLE ClosedCompanies (
-    companyName TEXT NOT NULL,
-    wardName TEXT NOT NULL,
-    closureDate TEXT NOT NULL
-);
+-- No longer have to worry about closed companies
+-- CREATE TABLE ClosedCompanies (
+--     companyName TEXT NOT NULL,
+--     wardName TEXT NOT NULL,
+--     closureDate TEXT NOT NULL
+-- );
 
 
 CREATE TABLE CityOfTorontoStatistics (
@@ -53,7 +70,11 @@ CREATE TABLE CityOfTorontoStatistics (
     percentageOfVacantOfficeSpace FLOAT NOT NULL,
     numOfEmploymentInsuranceBeneficiaries INTEGER NOT NULL,
     numOfBusinessLicencesRenewed INTEGER NOT NULL,
-    numOfNewBusinessLicencesIssued INTEGER NOT NULL
+    numOfNewBusinessLicencesIssued INTEGER NOT NULL,
+
+    PRIMARY KEY (d, numOfEmployedCityOfTorontoResidents, percentageOfSelfEmployedTorontoResidents,
+    percentageOfVacantOfficeSpace, numOfEmploymentInsuranceBeneficiaries, numOfBusinessLicencesRenewed,
+    numOfNewBusinessLicencesIssued)
 );
 
 

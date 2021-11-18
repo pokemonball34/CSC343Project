@@ -3,7 +3,7 @@
 \i sample-data.csv
 
 -- INSPECTING EVERY TABLE
-\d Jobs
+-- \d Jobs
 \d Companies
 \d Wards
 \d JobSectors
@@ -11,7 +11,7 @@
 \d CityOfTorontoStatistics
 
 -- NUMBER OF ROWS FOR EVERY TABLE
-SELECT count(*) FROM Jobs;
+-- SELECT count(*) FROM Jobs;
 SELECT count(*) FROM Companies;
 SELECT count(*) FROM Wards;
 SELECT count(*) FROM JobSectors;
@@ -19,7 +19,7 @@ SELECT count(*) FROM ClosedCompanies;
 SELECT count(*) FROM CityOfTorontoStatistics;
 
 -- SOME DATA FROM EVERY TABLE *** NEED TO INCLUDE WHERE TO LIMIT DATA
-SELECT * FROM Jobs;
+-- SELECT * FROM Jobs;
 SELECT * FROM Companies;
 SELECT * FROM Wards;
 SELECT * FROM JobSectors;
