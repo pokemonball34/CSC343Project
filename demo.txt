@@ -1,1 +1,43 @@
+cdf> psql csc343h-caoming4
+psql (10.19 (Ubuntu 10.19-0ubuntu0.18.04.1), server 10.18 (Ubuntu 10.18-0ubuntu0.18.04.1))
+Type "help" for help.
 
+--- (a) Load schema and data --------------------------------------------------
+--- TODO: Have PSQL copy our cleaned datasets to upload into our tables! ------
+csc343h-caoming4 => \i schema.ddl
+csc343h-caoming4 => \COPY FROM data.csv WITH csv
+
+
+--- (b) Run \d on each table --------------------------------------------------
+csc343h-caoming4=> \d Companies
+-- Display the table here --
+-- ... --
+csc343h-caoming4=> \d Wards
+csc343h-caoming4=> \d JobSectors
+csc343h-caoming4=> \d NewEstablishments
+csc343h-caoming4=> \d CityOfTorontoStatistics
+
+
+
+--- (c) Run SELECT count(*) on each table -------------------------------------
+csc343h-caoming4=> SELECT count(*) FROM Companies;
+count
+-------
+EXAMPLE
+(1 row)
+csc343h-caoming4=> SELECT count(*) FROM Wards;
+csc343h-caoming4=> SELECT count(*) FROM JobSectors;
+csc343h-caoming4=> SELECT count(*) FROM NewEstablishments;
+csc343h-caoming4=> SELECT count(*) FROM CityOfTorontoStatistics;
+
+
+--- (d) Show SOME rows from each table ----------------------------------------
+csc343h-caoming4=> SELECT * FROM Companies WHERE companyName < 'M';
+csc343h-caoming4=> SELECT * FROM Wards;
+csc343h-caoming4=> SELECT * FROM JobSectors WHERE sectorName > 'M';
+csc343h-caoming4=> SELECT * FROM NewEstablishments;
+csc343h-caoming4=> SELECT * FROM CityOfTorontoStatistics;
+
+
+
+--- REMEMBER TO ADD THE INPUTS/OUTPUT OF THE PSQL ONTO THIS FILE ---
