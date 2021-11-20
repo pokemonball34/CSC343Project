@@ -35,7 +35,7 @@ CREATE TABLE NewEstablishments (
 
 
 CREATE TABLE Companies (
-    companyID INTEGER NOT NULL,
+    companyID TEXT NOT NULL,
     companyName TEXT NOT NULL,
     postalCode TEXT NOT NULL,
     wardName TEXT,
