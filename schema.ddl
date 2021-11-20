@@ -19,8 +19,9 @@ SET SEARCH_PATH TO JobMarket;
 CREATE TABLE Companies (
     companyID INTEGER NOT NULL,
     companyName TEXT NOT NULL,
-    wardName TEXT NOT NULL,
-    numOfEmployees INTEGER NOT NULL,
+    postalCode TEXT NOT NULL,
+    wardName TEXT,
+    numOfEmployees INTEGER,
 
     PRIMARY KEY (companyID)
     FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName),
