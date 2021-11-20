@@ -14,11 +14,12 @@ CREATE TABLE
 CREATE TABLE
 
 --LOADING DATA
-csc343h-caterovv=> \COPY NewEstablishments(wardName, year) FROM sample-data.csv with csv header
-COPY 24
---currently data has a weird parsing issue
+csc343h-caterovv=> \COPY NewEstablishments(wardName, year) FROM ward-data.csv with csv header
+COPY 74
 csc343h-caterovv=> \COPY Companies FROM company-data.csv with csv header
 COPY 75919
+csc343h-caterovv=> \COPY JobSectors FROM sector-data.csv with csv header
+COPY
 
 --- (b) Run \d on each table --------------------------------------------------
 csc343h-caterovv=> \d
