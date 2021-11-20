@@ -1,0 +1,64 @@
+﻿"Average weekly earnings by industry, monthly, unadjusted for seasonality 1 2 3 4 5"
+"Frequency: Monthly"
+"Table: 14-10-0203-01 (formerly CANSIM 281-0026)"
+"Release date: 2021-09-28"
+"Geography: Canada, Province or territory"
+""
+""
+
+,"Ontario",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,"All employees 6",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,"Including overtime",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"North American Industry Classification System (NAICS) 5","January 2019","February 2019","March 2019","April 2019","May 2019","June 2019","July 2019","August 2019","September 2019","October 2019","November 2019","December 2019","January 2020","February 2020","March 2020","April 2020","May 2020","June 2020","July 2020","August 2020","September 2020","October 2020","November 2020","December 2020","January 2021","February 2021","March 2021","April 2021","May 2021","June 2021","July 2021"
+,"Current dollars",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Industrial aggregate excluding unclassified businesses  [11-91N] 7 8","1,028.97A","1,038.85A","1,043.78A","1,038.65A","1,049.61A","1,042.21A","1,039.15A","1,051.54A","1,057.39B","1,058.04B","1,064.25B","1,082.46B","1,063.42B","1,071.81B","1,070.61B","1,129.47B","1,164.95B","1,152.56B","1,140.38B","1,143.03B","1,142.54B","1,133.96B","1,151.20B","1,168.30B","1,174.12B","1,189.61B","1,171.48B","1,163.33B","1,174.65B","1,155.69B","1,154.34B"
+"Goods producing industries  [11-33N] 9","1,227.92A","1,248.72A","1,244.89A","1,234.09A","1,237.37A","1,224.06A","1,230.85A","1,261.43A","1,266.00B","1,277.60B","1,270.37B","1,298.79A","1,276.05A","1,275.31B","1,246.94B","1,254.94B","1,247.00B","1,260.20B","1,274.11B","1,279.50B","1,298.79B","1,283.85B","1,315.60B","1,330.04B","1,297.46B","1,309.59B","1,307.07B","1,287.37B","1,289.67B","1,296.44B","1,309.87B"
+"Forestry, logging and support  [11N] 10","1,195.20A","1,196.66B","1,176.54A","1,032.30B","1,164.02B","1,190.15A","1,167.73A","1,132.77A","1,165.78B","1,158.08E","1,181.10B","1,227.17B","1,225.56B","1,169.67C","1,067.10B","1,039.31B","1,170.93B","1,024.07B","996.77B","1,105.98A","1,164.22D","1,137.17B","1,113.40B","1,275.23B","1,151.48B","1,267.90B","1,197.06C","1,212.63C","1,135.92E","1,137.47C","1,018.26B"
+"Mining, quarrying, and oil and gas extraction  [21]","1,985.85B","2,095.75A","1,986.32B","2,017.49A","2,030.64B","1,770.40B","1,801.82B","1,673.17A","1,729.38C","1,825.17B","1,946.94B","1,929.57C","1,976.86C","2,059.68B","2,149.80B","1,878.97C","1,911.79B","2,015.81B","1,806.28C","1,910.11B","1,830.79C","1,800.90B","1,883.98B","1,739.94B","1,778.06B","1,937.04B","1,982.36B","1,897.09B","1,921.44B","1,817.35C","1,986.88B"
+"Utilities  [22,221]","1,904.64A","1,916.41A","1,965.82B","1,932.58B","2,017.09B","2,010.61A","1,980.90A","1,966.59A","1,983.64C","2,063.03B","2,053.16B","2,145.94B","2,178.90B","2,121.16C","2,147.83B","2,019.01C","1,926.37C","2,062.04C","1,791.57B","1,893.54A","1,842.88A","1,923.48A","1,997.09A","1,875.96A","1,975.83B","1,884.88A","1,857.74B","1,901.34B","1,940.37B","1,935.87A","2,018.04A"
+"Construction  [23]","1,211.31A","1,228.98A","1,260.77A","1,217.99A","1,253.52A","1,249.78A","1,283.65A","1,338.25A","1,301.09B","1,301.76B","1,261.76B","1,299.75A","1,296.72A","1,255.80B","1,230.69B","1,255.26B","1,316.83B","1,328.08B","1,329.16B","1,346.92B","1,351.35B","1,328.32A","1,328.09B","1,313.75B","1,333.04B","1,345.88B","1,370.53B","1,355.34B","1,336.27B","1,364.37B","1,367.71B"
+"Manufacturing  [31-33]","1,157.20A","1,175.92A","1,154.80A","1,161.01A","1,139.59A","1,130.42A","1,124.25A","1,151.82A","1,175.06B","1,184.03A","1,189.46B","1,209.26B","1,168.39A","1,189.82B","1,145.28B","1,163.05B","1,125.31B","1,127.60B","1,182.47B","1,168.40B","1,206.10A","1,189.11B","1,233.90B","1,280.37B","1,208.94B","1,222.11B","1,205.76B","1,179.06B","1,187.20B","1,186.64B","1,197.71B"
+"Service producing industries  [41-91N] 11","987.79A","995.31A","1,002.10A","997.76A","1,009.60A","1,003.36A","997.19A","1,004.92A","1,012.64B","1,011.51B","1,020.92A","1,037.53B","1,020.13B","1,030.23B","1,035.42B","1,103.78B","1,147.06B","1,128.10B","1,109.73B","1,111.70B","1,108.01B","1,101.49B","1,115.74B","1,133.40A","1,147.52B","1,163.68B","1,142.45B","1,136.64B","1,149.05B","1,124.44B","1,119.79B"
+"Trade  [41-45N] 12","808.98A","807.63A","842.14A","824.67A","839.02A","831.68A","820.43A","822.14A","827.13B","826.67B","836.52B","845.45B","821.98B","836.72B","837.25B","892.00B","902.21B","905.99B","894.38B","908.10B","883.29B","880.57B","871.99B","890.93B","903.92B","892.21A","875.68B","882.10B","912.06A","895.01B","887.16A"
+"Transportation and warehousing  [48-49]","1,000.90A","1,019.53A","1,012.65A","1,058.00A","1,068.07A","1,053.55A","1,072.07A","1,097.23A","1,101.42B","1,062.86B","1,063.85A","1,081.88B","1,093.86A","1,087.49B","1,060.63B","1,102.77B","1,157.13B","1,143.30B","1,154.73B","1,167.05B","1,155.85B","1,142.03B","1,139.60B","1,158.77B","1,118.46B","1,146.88B","1,152.64B","1,136.43B","1,131.55B","1,104.88B","1,155.29B"
+"Information and cultural industries  [51]","1,316.25A","1,342.78A","1,295.70A","1,302.87A","1,381.92A","1,381.31A","1,447.54A","1,403.72A","1,485.68B","1,399.13B","1,429.00B","1,481.68B","1,376.28A","1,462.60B","1,454.63B","1,440.99B","F","1,425.06B","1,448.70B","1,484.85B","1,626.41B","1,519.55B","1,741.12B","1,666.74B","1,679.14A","1,800.96A","1,818.81B","1,692.62A","1,780.35A","1,755.33A","1,784.01A"
+"Finance and insurance  [52]","1,417.04A","1,387.03A","1,344.22A","1,387.71A","1,455.03A","1,389.93A","1,382.97A","1,403.45A","1,369.76B","1,387.66A","1,418.18A","1,512.98B","1,420.86B","1,443.67B","1,357.33B","1,481.96B","1,549.97A","1,566.34B","1,503.25B","1,560.53B","1,506.59A","1,508.10B","1,542.41A","1,631.92A","1,679.87A","1,631.71A","1,505.13A","1,514.83A","1,551.26A","1,479.38A","1,473.99A"
+"Real estate and rental and leasing  [53]","1,036.64B","1,109.35A","1,111.63A","1,023.01A","1,057.86A","1,020.23A","1,076.22A","1,138.28A","1,068.59B","994.80B","981.85C","998.53B","974.52B","1,166.40B","1,176.32B","1,148.97B","1,092.51C","1,133.82D","1,250.52B","1,175.86B","1,205.35A","1,228.52A","1,175.13A","1,159.11A","1,218.31A","1,303.57A","1,264.77A","1,215.53A","1,215.16B","1,199.48B","1,206.58A"
+"Professional, scientific and technical services  [54,541]","1,439.79A","1,484.19A","1,513.67A","1,498.94A","1,438.33A","1,475.94A","1,430.95A","1,482.60A","1,493.74B","1,469.56B","1,511.35A","1,557.30B","1,519.71A","1,534.73B","1,495.60B","1,467.38C","1,499.46C","1,486.49B","1,489.57C","1,531.24B","1,500.70C","1,527.91B","1,578.21B","1,594.92A","1,575.90B","1,608.49B","1,624.48B","1,601.95B","1,578.23B","1,515.07A","1,550.88B"
+"Management of companies and enterprises  [55,551,5511]","1,657.87A","F","1,613.19C","1,580.09B","1,493.84A","1,519.68D","1,595.06A","1,688.05A","1,681.96D","1,682.34B","1,663.63C","1,637.09C","1,670.57A","1,746.61B","1,485.77C","1,576.60C","1,755.63C","1,442.16C","1,615.11C","1,659.72B","1,348.13C","1,675.81B","1,544.07A","1,492.10B","1,491.78D","1,520.31C","1,537.93C","1,498.57C","1,520.07C","1,574.00A","1,508.97B"
+"Administrative and support, waste management and remediation services  [56]","851.42A","863.80A","877.54A","837.67A","839.02A","822.53A","824.02A","813.92A","817.65B","822.11B","825.53B","829.77A","842.94B","822.94B","846.50B","890.23B","914.62B","912.54B","912.51B","859.80B","905.26B","901.60B","892.92B","904.07B","906.12B","961.76B","945.71B","979.63B","981.34B","966.53B","946.91B"
+"Educational services  [61,611]","1,072.11A","1,077.30A","1,046.04A","1,049.42A","1,095.44A","1,121.43A","1,111.71A","1,165.92A","1,151.89B","1,135.36B","1,105.87B","1,118.65C","1,082.35B","1,072.41B","1,094.10B","1,137.28B","1,184.54B","1,209.77B","1,256.05B","1,239.63B","1,261.19B","1,184.63B","1,195.08A","1,201.48B","1,219.92B","1,202.99B","1,218.24B","1,180.85B","1,221.77B","1,253.55B","1,255.11B"
+"Health care and social assistance  [62]","922.15A","941.18A","951.53A","953.20A","969.93A","955.20A","955.26A","926.41A","955.01B","963.17A","968.95A","969.20B","961.02B","970.41B","968.03B","1,001.51B","1,059.58B","1,045.13B","1,017.74B","1,038.41A","1,049.03A","1,030.57B","1,030.77B","1,039.43A","1,024.21B","1,034.92A","1,043.27A","1,043.13A","1,022.22B","1,009.49B","1,026.76B"
+"Arts, entertainment and recreation  [71]","635.95A","625.83A","688.53A","600.54A","618.55A","605.12A","585.70A","620.16A","600.82B","615.54B","634.30A","626.53B","638.10C","592.60A","701.43B","767.21B","778.48C","790.48B","789.68B","758.00C","733.81B","730.16B","738.71A","768.28B","794.48C","877.56B","799.98C","802.73A","870.78A","759.11B","718.05B"
+"Accommodation and food services  [72]","397.98A","397.97A","401.64A","406.39A","421.91A","421.20A","423.21A","432.08A","435.04B","435.82B","435.19B","441.43A","438.87B","431.26B","425.83B","451.54C","492.52C","460.24B","460.65B","419.59B","429.85B","431.84B","428.10B","460.32B","443.20B","447.93B","444.62B","448.51B","444.87B","431.70B","450.58B"
+"Other services (except public administration)  [81]","882.87A","858.66A","868.99A","870.98A","895.71A","893.17A","878.73A","885.74A","887.16C","897.46B","882.26B","909.44B","893.50A","887.16B","900.05B","1,002.97B","1,057.92B","1,014.00A","943.71B","945.39B","964.45B","970.44B","967.20B","988.00B","1,011.23A","1,031.82A","994.88B","986.16B","1,045.90B","1,066.73A","1,012.59B"
+"Public administration  [91]","1,401.03A","1,397.67A","1,395.03A","1,397.36A","1,385.56A","1,387.37A","1,385.94A","1,388.86A","1,387.65A","1,428.02A","1,455.68A","1,439.12A","1,457.42A","1,447.97B","1,459.71A","1,487.98A","1,529.35A","1,521.61A","1,537.29B","1,562.91A","1,535.39A","1,539.53A","1,561.00A","1,552.22A","1,588.87A","1,618.10B","1,560.58A","1,607.65B","1,525.59A","1,514.14A","1,527.09B"
+
+Symbol legend:
+E, use with caution
+F, too unreliable to be published
+A, data quality: excellent
+B, data quality: very good
+C, data quality: good
+D, data quality: acceptable
+
+
+
+Footnotes:
+1,"The quality indicators take into account various factors that affect the quality of the data, notably the CV, the non-response errors and the imputation errors. Quality indicators indicate the following: A - Excellent; B - Very good; C - Good; D - Acceptable; E - Use with caution; F - Too unreliable to publish or sample size is too small to produce reliable estimates."
+2,"The introduction of administrative data in 2001 and the associated change in methodology resulted in level shifts for some series. This affects the comparability of pre- and post-2001 estimates."
+3,"Estimates for the latest reference month are preliminary."
+4,"Earnings data are based on gross payroll before source deductions."
+5,"Industry estimates in this table are based on the 2017 North American Industry Classification System (NAICS) Version 3.0."
+6,""All employees" is the sum of employees paid by the hour, salaried employees and other employees."
+7,"Industrial aggregate covers all industrial sectors except those primarily involved in agriculture, fishing and trapping, private household services, religious organisations and the military personnel of the defence services."
+8,"Unclassified businesses (00) are businesses for which the industrial classification (North American Industry Classification System [NAICS] 2017 Version 3.0) has yet to be determined."
+9,"Goods producing industries (11-33N) includes the following sectors: forestry, logging and support (11N), mining, quarrying, and oil and gas extraction (21), utilities (22), construction (23) and manufacturing (31-33)."
+10,"Forestry, logging and support (11N) includes the following industries: forestry and logging (113) and support activities for forestry (1153)."
+11,"Service producing industries (41-91N) includes the following industries: trade (41-45N), transportation and warehousing (48-49), information and cultural industries (51), finance and insurance (52), real estate and rental and leasing (53), professional, scientific and technical services (54), management of companies and enterprises (55), administrative and support, waste management and remediation services (56), educational services (61), health care and social assistance (62), arts, entertainment and recreation (71), accommodation and food services (72), other services (except public administration) (81) and public administration (91)."
+12,"Trade (41-45N) industry includes the following sectors: wholesale trade (41) and retail trade (44-45)."
+
+
+
+"How to cite: Statistics Canada. Table 14-10-0203-01  Average weekly earnings by industry, monthly, unadjusted for seasonality"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410020301

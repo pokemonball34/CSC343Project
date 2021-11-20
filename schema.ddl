@@ -37,19 +37,18 @@ CREATE TABLE JobSectors (
 );
 
 
-CREATE TABLE Wards (
-    wardName TEXT NOT NULL,
-    PRIMARY KEY (wardName)
-);
+-- CREATE TABLE Wards (
+--     wardName TEXT NOT NULL,
+--     PRIMARY KEY (wardName)
+-- );
 
 -- NEW TABLE FOR NEW ESTABLISHMENTS
-CREATE TABLE NewEstablishments (
+CREATE TABLE Wards (
     wardName TEXT NOT NULL,
     year INTEGER NOT NULL,
     newEstablishments INTEGER NOT NULL,
 
-    PRIMARY KEY (wardName, year, newEstablishments),
-    FOREIGN KEY (wardName) REFERENCES Wards(wardName),
+    PRIMARY KEY (wardName, year),
     CONSTRAINT validyear
         CHECK (year = 2019 OR year = 2020 OR year = 2021)
 );
@@ -64,7 +63,10 @@ CREATE TABLE NewEstablishments (
 
 
 CREATE TABLE CityOfTorontoStatistics (
-    d DATE NOT NULL,
+    year INTEGER NOT NULL,
+    month TEXT NOT NULL,
+    -- d DATE NOT NULL,
+    empRate FLOAT NOT NULL,
     numOfEmployedCityOfTorontoResidents INTEGER NOT NULL,
     percentageOfSelfEmployedTorontoResidents FLOAT NOT NULL,
     percentageOfVacantOfficeSpace FLOAT NOT NULL,

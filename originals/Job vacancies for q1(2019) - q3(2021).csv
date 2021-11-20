@@ -1,0 +1,43 @@
+﻿"Job vacancies, payroll employees, job vacancy rate, and average offered hourly wage by provinces and territories, quarterly, unadjusted for seasonality"
+"Frequency: Quarterly"
+"Table: 14-10-0325-01 (formerly CANSIM 285-0001)"
+"Release date: 2021-09-21"
+"Geography: Canada, Province or territory, Economic region"
+""
+""
+
+"Geography 3","Statistics","Q1 2019","Q2 2019","Q3 2019","Q4 2019","Q1 2020","Q2 2020","Q3 2020","Q4 2020","Q1 2021","Q2 2021"
+"Ontario",,"Number",,,,,,,,,
+,"Job vacancies 4","193,290A","213,225A","205,935A","191,030A","187,360A","..","..","210,215A","196,385A","264,530A"
+,"Payroll employees 5","6,235,450A","6,246,265A","6,327,295A","6,403,695A","6,321,200A","..","..","5,914,685A","5,819,885A","5,872,260A"
+,,"Percentage",,,,,,,,,
+,"Job vacancy rate 6","3.0A","3.3A","3.2A","2.9A","2.9A","..","..","3.4A","3.3A","4.3A"
+,,"Dollars",,,,,,,,,
+,"Average offered hourly wage 7","22.55A","22.05A","22.15A","22.65A","23.55A","..","..","23.10A","24.75A","23.85A"
+"Toronto, Ontario",,"Number",,,,,,,,,
+,"Job vacancies 4","98,370A","103,085A","101,345A","99,070A","94,760A","..","..","100,840A","97,250A","124,755A"
+,"Payroll employees 5","3,122,045A","3,123,765A","3,165,975A","3,243,420A","3,241,710A","..","..","2,936,150A","2,954,075A","3,003,400A"
+,,"Percentage",,,,,,,,,
+,"Job vacancy rate 6","3.1A","3.2A","3.1A","3.0A","2.8A","..","..","3.3A","3.2A","4.0A"
+,,"Dollars",,,,,,,,,
+,"Average offered hourly wage 7","24.20A","23.80A","23.95A","24.30A","25.40A","..","..","24.70A","26.45A","26.05A"
+
+Symbol legend:
+.., not available for a specific reference period
+A, data quality: excellent
+
+
+
+Footnotes:
+1,"Data quality indicators are based on the coefficient of variation (CV), the non-response errors, the imputation errors, and subject matter expertise: A – Excellent; B - Very good; C - Good; D – Acceptable; E - Use with caution; F - Too unreliable to publish."
+2,"Data for the second and third quarters of 2020 are unavailable due to some Statistics Canada operations being temporarily suspended during the COVID-19 pandemic."
+3,"An economic region (ER) is a grouping of complete census divisions (with one exception in Ontario) created as a standard geographic unit for analysis of regional economic activity. Canada has 76 ERs that are classified in accordance with the <a href="https://www150.statcan.gc.ca/n1/en/catalogue/12-571-X2016001">Standard Geographical Classification (SGC) 2016</a>, which is based on 2016 Census boundaries. The Job Vacancy and Wage Survey (JVWS) publishes estimates for 69 ERs, seven of which are combined. These seven combined ERs are the same as those published by the Labour Force Survey. Maps illustrating the ERs, as well as a table showing the census metropolitan areas (CMAs) and census agglomerations (CAs) within each ER, are available by selecting the “JVWS Geographical Maps” link at the bottom of the JVWS survey page (<a href="http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=5217">5217</a>)."
+4,"A job is vacant if it meets the following conditions: it is vacant on the reference date (first day of the month) or will become vacant during the month; there are tasks to be carried out during the month for the job in question; and the employer is actively seeking a worker outside the organization to fill the job. The jobs could be full-time, part-time, permanent, temporary, casual, or seasonal. Jobs reserved for subcontractors, external consultants, or other workers who are not considered employees, are excluded."
+5,"The 'employee' concept used in the Job Vacancy and Wage Survey (JVWS) is comprised of full-time employees, part-time employees, as well as permanent, casual, temporary, and seasonal employees. It also includes working owners, directors, partners, and other officers of incorporated businesses, as well as employees who work at home or on the road but report to the location. The ‘employee' concept used in the JVWS is meant to exclude owners or partners of unincorporated businesses and professional practices, the self-employed, subcontractors, external consultants, unpaid family workers, persons working outside Canada, and military personnel. It also excludes employees on unpaid leave, such as those on extended sick leave who are receiving insurance benefits. The employment estimates from the JVWS are calibrated to the employment estimates from the <a href="http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=2612">Survey of Employment, Payrolls and Hours</a> (SEPH) at the North American Industry Classification System sector (NAICS2) level by province."
+6,"The job vacancy rate is the number of job vacancies expressed as a percentage of labour demand; that is, all occupied and vacant jobs."
+7,"The average hourly wage offered by employers for vacant positions. It excludes overtime, tips, commissions and bonuses. Salaries are converted to hourly wages based on information regarding the frequency of pay and the expected average number of hours worked per week. The offered wage may be different from the actual wage paid once the position is filled. If the salary is different among the job vacancies for the same occupation, the respondent is asked to report the lowest wage or salary. When the compensation advertised for the job vacancy is in the form of a salary range or an hourly pay range, the respondent is asked to report the lowest value of the range. If the work will be paid based on, for example, the number of parts produced, mileage or the number of times a task is performed, the respondent is asked to report the expected minimum salary."
+
+
+
+"How to cite: Statistics Canada. Table 14-10-0325-01  Job vacancies, payroll employees, job vacancy rate, and average offered hourly wage by provinces and territories, quarterly, unadjusted for seasonality"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410032501
