@@ -108,7 +108,7 @@ csc343h-caterovv=> SELECT count(*) FROM CityOfTorontoStatistics;
 
 --- (d) Show SOME rows from each table ----------------------------------------
 
-csc343h-caterovv=> SELECT * FROM Companies WHERE wadName = 'University-Rosedale';
+csc343h-caterovv=> SELECT * FROM Companies WHERE wardName = 'University-Rosedale';
  companyid | companyname | wardname | numofemployees 
 -----------+-------------+----------+----------------
 (0 rows)
