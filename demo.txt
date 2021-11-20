@@ -1,30 +1,132 @@
--- LOADING SCHEMA AND DATA
-\i schema.ddl
-\COPY Wards FROM ward-data.csv with csv
+-- LOADING SCHEMA
+csc343h-caterovv=> \i schema.ddl
+psql:schema.ddl:1: NOTICE:  drop cascades to 4 other objects
+DETAIL:  drop cascades to table companies
+drop cascades to table jobsectors
+drop cascades to table wards
+drop cascades to table cityoftorontostatistics
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+
+--LOADING DATA
+\COPY NewEstablishments FROM ward-data.csv with csv
+--currently data has a weird parsing issue
 
 -- INSPECTING EVERY TABLE
--- \d Jobs
-\d Companies
-\d Wards
-\d JobSectors
-\d ClosedCompanies
-\d CityOfTorontoStatistics
+csc343h-caterovv=> \d
+                   List of relations
+  Schema   |          Name           | Type  |  Owner   
+-----------+-------------------------+-------+----------
+ jobmarket | cityoftorontostatistics | table | caterovv
+ jobmarket | companies               | table | caterovv
+ jobmarket | jobsectors              | table | caterovv
+ jobmarket | newestablishments       | table | caterovv
+(4 rows)
+
+csc343h-caterovv=> \d Companies
+                Table "jobmarket.companies"
+     Column     |  Type   | Collation | Nullable | Default 
+----------------+---------+-----------+----------+---------
+ companyid      | integer |           | not null | 
+ companyname    | text    |           | not null | 
+ wardname       | text    |           | not null | 
+ numofemployees | integer |           | not null | 
+Indexes:
+    "companies_pkey" PRIMARY KEY, btree (companyid)
+
+
+csc343h-caterovv=> \d NewEstablishments
+             Table "jobmarket.newestablishments"
+      Column       |  Type   | Collation | Nullable | Default 
+-------------------+---------+-----------+----------+---------
+ wardname          | text    |           | not null | 
+ year              | integer |           | not null | 
+ newestablishments | integer |           | not null | 0
+Indexes:
+    "newestablishments_pkey" PRIMARY KEY, btree (wardname, year)
+Check constraints:
+    "validyear" CHECK (year = 2019 OR year = 2020 OR year = 2021)
+    
+
+csc343h-caterovv=> \d JobSectors
+            Table "jobmarket.jobsectors"
+   Column   | Type | Collation | Nullable | Default 
+------------+------+-----------+----------+---------
+ sectorname | text |           | not null | 
+ subsector  | text |           | not null | 
+Indexes:
+    "jobsectors_pkey" PRIMARY KEY, btree (sectorname, subsector)
+    
+csc343h-caterovv=> \d CityOfTorontoStatistics
+                          Table "jobmarket.cityoftorontostatistics"
+                  Column                  |       Type       | Collation | Nullable | Default 
+------------------------------------------+------------------+-----------+----------+---------
+ year                                     | integer          |           | not null | 
+ month                                    | text             |           | not null | 
+ emprate                                  | double precision |           | not null | 
+ numofemployedcityoftorontoresidents      | integer          |           | not null | 
+ percentageofselfemployedtorontoresidents | double precision |           | not null | 
+ percentageofvacantofficespace            | double precision |           | not null | 
+ numofemploymentinsurancebeneficiaries    | integer          |           | not null | 
+ numofbusinesslicencesrenewed             | integer          |           | not null | 
+ numofnewbusinesslicencesissued           | integer          |           | not null | 
+Indexes:
+    "cityoftorontostatistics_pkey" PRIMARY KEY, btree (year, month)
+
 
 -- NUMBER OF ROWS FOR EVERY TABLE
--- SELECT count(*) FROM Jobs;
-SELECT count(*) FROM Companies;
-SELECT count(*) FROM Wards;
-SELECT count(*) FROM JobSectors;
-SELECT count(*) FROM ClosedCompanies;
-SELECT count(*) FROM CityOfTorontoStatistics;
+
+csc343h-caterovv=> SELECT count(*) FROM Companies;
+ count 
+-------
+     0
+(1 row)
+
+csc343h-caterovv=> SELECT count(*) FROM NewEstablishments;
+ count 
+-------
+     0
+(1 row)
+
+csc343h-caterovv=> SELECT count(*) FROM JobSectors;
+ count 
+-------
+     0
+(1 row)
+
+csc343h-caterovv=> SELECT count(*) FROM CityOfTorontoStatistics;
+ count 
+-------
+     0
+(1 row)
+
 
 -- SOME DATA FROM EVERY TABLE *** NEED TO INCLUDE WHERE TO LIMIT DATA
--- SELECT * FROM Jobs;
-SELECT * FROM Companies;
-SELECT * FROM Wards;
-SELECT * FROM JobSectors;
-SELECT * FROM ClosedCompanies;
-SELECT * FROM CityOfTorontoStatistics;
+
+csc343h-caterovv=> SELECT * FROM Companies;
+ companyid | companyname | wardname | numofemployees 
+-----------+-------------+----------+----------------
+(0 rows)
+
+csc343h-caterovv=> SELECT * FROM NewEstablishments;
+ wardname | year | newestablishments 
+----------+------+-------------------
+(0 rows)
+
+csc343h-caterovv=> SELECT * FROM JobSectors;
+ sectorname | subsector 
+------------+-----------
+(0 rows)
+
+csc343h-caterovv=> SELECT * FROM CityOfTorontoStatistics;
+ year | month | emprate | numofemployedcityoftorontoresidents | percentageofselfemployedtorontoresidents | percentageofvacantofficespace | numofemploymentinsurancebeneficiaries | numofbusinesslicencesrenewed | numofnewbusinesslicencesissued 
+------+-------+---------+-------------------------------------+------------------------------------------+-------------------------------+---------------------------------------+------------------------------+--------------------------------
+(0 rows)
 
 
 
