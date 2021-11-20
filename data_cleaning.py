@@ -12,6 +12,7 @@ com_data = pd.read_csv('Datasets/business_licences.csv', usecols=col_list)
 com_data = com_data.rename(columns=col_names)
 com_data.drop_duplicates(subset="companyName", inplace=True)
 com_data.dropna(subset=["companyName"], inplace=True)
+com_data.dropna(subset=["postalCode"], inplace=True)
 
 # Postal Code to Ward Dictionary
 codeToWard = {
