@@ -17,10 +17,11 @@ SET SEARCH_PATH TO JobMarket;
 -- );
 
 CREATE TABLE JobSectors (
+    sectorID INT NOT NULL,
     sectorName TEXT NOT NULL,
     subSector TEXT NOT NULL,
 
-    PRIMARY KEY (sectorName, subSector)
+    PRIMARY KEY (sectorID)
 );
 
 CREATE TABLE NewEstablishments (
