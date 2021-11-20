@@ -1,4 +1,4 @@
--- LOADING SCHEMA
+--- (a) Load schema and data --------------------------------------------------
 csc343h-caterovv=> \i schema.ddl
 psql:schema.ddl:1: NOTICE:  drop cascades to 4 other objects
 DETAIL:  drop cascades to table companies
@@ -17,7 +17,7 @@ CREATE TABLE
 \COPY NewEstablishments FROM ward-data.csv with csv
 --currently data has a weird parsing issue
 
--- INSPECTING EVERY TABLE
+--- (b) Run \d on each table --------------------------------------------------
 csc343h-caterovv=> \d
                    List of relations
   Schema   |          Name           | Type  |  Owner   
@@ -79,7 +79,7 @@ Indexes:
     "cityoftorontostatistics_pkey" PRIMARY KEY, btree (year, month)
 
 
--- NUMBER OF ROWS FOR EVERY TABLE
+--- (c) Run SELECT count(*) on each table -------------------------------------
 
 csc343h-caterovv=> SELECT count(*) FROM Companies;
  count 
@@ -106,24 +106,24 @@ csc343h-caterovv=> SELECT count(*) FROM CityOfTorontoStatistics;
 (1 row)
 
 
--- SOME DATA FROM EVERY TABLE *** NEED TO INCLUDE WHERE TO LIMIT DATA
+--- (d) Show SOME rows from each table ----------------------------------------
 
-csc343h-caterovv=> SELECT * FROM Companies;
+csc343h-caterovv=> SELECT * FROM Companies WHERE wadName = 'University-Rosedale';
  companyid | companyname | wardname | numofemployees 
 -----------+-------------+----------+----------------
 (0 rows)
 
-csc343h-caterovv=> SELECT * FROM NewEstablishments;
+csc343h-caterovv=> SELECT * FROM NewEstablishments WHERE year = 2019;
  wardname | year | newestablishments 
 ----------+------+-------------------
 (0 rows)
 
-csc343h-caterovv=> SELECT * FROM JobSectors;
+csc343h-caterovv=> SELECT * FROM JobSectors WHERE sectorName = 'Real estate and rental and leasing';
  sectorname | subsector 
 ------------+-----------
 (0 rows)
 
-csc343h-caterovv=> SELECT * FROM CityOfTorontoStatistics;
+csc343h-caterovv=> SELECT * FROM CityOfTorontoStatistics WHERE year = 2019;
  year | month | emprate | numofemployedcityoftorontoresidents | percentageofselfemployedtorontoresidents | percentageofvacantofficespace | numofemploymentinsurancebeneficiaries | numofbusinesslicencesrenewed | numofnewbusinesslicencesissued 
 ------+-------+---------+-------------------------------------+------------------------------------------+-------------------------------+---------------------------------------+------------------------------+--------------------------------
 (0 rows)
