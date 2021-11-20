@@ -14,9 +14,11 @@ CREATE TABLE
 CREATE TABLE
 
 --LOADING DATA
-\COPY NewEstablishments(wardName, year) FROM sample-data.csv with csv header
+csc343h-caterovv=> \COPY NewEstablishments(wardName, year) FROM sample-data.csv with csv header
 COPY 24
 --currently data has a weird parsing issue
+csc343h-caterovv=> \COPY Companies FROM company-data.csv with csv header
+COPY 75919
 
 --- (b) Run \d on each table --------------------------------------------------
 csc343h-caterovv=> \d
@@ -33,8 +35,9 @@ csc343h-caterovv=> \d Companies
                 Table "jobmarket.companies"
      Column     |  Type   | Collation | Nullable | Default 
 ----------------+---------+-----------+----------+---------
- companyid      | integer |           | not null | 
+ companyid      | text    |           | not null | 
  companyname    | text    |           | not null | 
+ postalcode     | text    |           | not null |
  wardname       | text    |           | not null | 
  numofemployees | integer |           | not null | 
 Indexes:
@@ -83,15 +86,15 @@ Indexes:
 --- (c) Run SELECT count(*) on each table -------------------------------------
 
 csc343h-caterovv=> SELECT count(*) FROM Companies;
- count 
+count
 -------
-     0
+ 75919
 (1 row)
 
 csc343h-caterovv=> SELECT count(*) FROM NewEstablishments;
  count 
 -------
-     0
+    24
 (1 row)
 
 csc343h-caterovv=> SELECT count(*) FROM JobSectors;
@@ -109,15 +112,63 @@ csc343h-caterovv=> SELECT count(*) FROM CityOfTorontoStatistics;
 
 --- (d) Show SOME rows from each table ----------------------------------------
 
-csc343h-caterovv=> SELECT * FROM Companies WHERE wardName = 'University-Rosedale';
- companyid | companyname | wardname | numofemployees 
------------+-------------+----------+----------------
-(0 rows)
+csc343h-caterovv=> SELECT * FROM Companies WHERE postalcode='M9A';
+  companyid  |             companyname              | postalcode | wardname | numofemployees
+-------------+--------------------------------------+------------+----------+----------------
+ T85-3008021 | MASTERCRAFT PROFESSIONAL RENOVATIONS | M9A        |          |
+ T85-0245369 | GOLAS CONSTRUCTION & RENOVATION CO   | M9A        |          |
+ T85-3106473 | MAYFIELD CONSTRUCTION AND DESIGN     | M9A        |          |
+ T85-3360662 | ROZAFA                               | M9A        |          |
+ T85-3251177 | SASA DESIGN CRAFT                    | M9A        |          |
+ T85-3594534 | PETER F H WEHRSPANN                  | M9A        |          |
+ T85-3368419 | HARTSON HOME IMPROVEMENTS            | M9A        |          |
+ T85-3951508 | TOTAL HOME SERVICE                   | M9A        |          |
+ T85-3102571 | ALLTRADE RENOVATIONS                 | M9A        |          |
+ T85-3953349 | R.D. CONSTRUCTION SERVICES           | M9A        |          |
+ T85-3082310 | ALBA                                 | M9A        |          |
+ T85-4307300 | BB ALUMINUM                          | M9A        |          |
+ T85-3957856 | RA-DO CONSTRUCTION & ROOFING         | M9A        |          |
+ T85-4542063 | G LINE RENOVATIONS                   | M9A        |          |
+ T85-3090445 | JACK ROOFING                         | M9A        |          |
+ T85-4649609 | STRAZOS                              | M9A        |          |
+ T85-4064408 | ON TIME CONTRACTING                  | M9A        |          |
+ T85-4421731 | LM CONSTRUCTION                      | M9A        |          |
+ T87-0001377 | F AND T TEDESCO CONT LTD             | M9A        |          |
+ T87-4314161 | AAA DRAIN COMPANY                    | M9A        |          |
+ T92-0000064 | HORNIAK PLUMBING&HEATING             | M9A        |          |
+ T94-3126320 | HORNIAK PLUMBING                     | M9A        |          |
+ T94-0223299 | P.J. PLUMBING CO.                    | M9A        |          |
+ T94-3014528 | LAKESHORE PLUMBING                   | M9A        |          |
+ V15-4647683 | THE URBAN ASIAN                      | M9A        |          |
+(25 rows)
 
 csc343h-caterovv=> SELECT * FROM NewEstablishments WHERE year = 2019;
- wardname | year | newestablishments 
-----------+------+-------------------
-(0 rows)
+        wardname        | year | newestablishments
+------------------------+------+-------------------
+ York Centre            | 2019 |                 0
+ Willowdale             | 2019 |                 0
+ University-Rosedale    | 2019 |                 0
+ Beaches-East York      | 2019 |                 0
+ Scarborough Southwest  | 2019 |                 0
+ Scarborough-Rouge Park | 2019 |                 0
+ Scarborough North      | 2019 |                 0
+ Scarborough-Guildwood  | 2019 |                 0
+ Scarborough Centre     | 2019 |                 0
+ Scarborough-Agincourt  | 2019 |                 0
+ Don Valley West        | 2019 |                 0
+ Toronto-St. Paul's     | 2019 |                 0
+ Parkdale-High Park     | 2019 |                 0
+ Etobicoke North        | 2019 |                 0
+ Etobicoke-Lakeshore    | 2019 |                 0
+ Etobicoke Centre       | 2019 |                 0
+ Eglinton-Lawrence      | 2019 |                 0
+ Don Valley North       | 2019 |                 0
+ Don Valley East        | 2019 |                 0
+ Davenport              | 2019 |                 0
+ Toronto Centre         | 2019 |                 0
+ York South-Weston      | 2019 |                 0
+ Toronto-Danforth       | 2019 |                 0
+ Spadina-Fort York      | 2019 |                 0
 
 csc343h-caterovv=> SELECT * FROM JobSectors WHERE sectorName = 'Real estate and rental and leasing';
  sectorname | subsector 
