@@ -1,0 +1,102 @@
+111,"Agriculture, forestry, fishing and hunting",Crop production
+112,"Agriculture, forestry, fishing and hunting",Animal production and aquaculture
+113,"Agriculture, forestry, fishing and hunting",Forestry and logging
+114,"Agriculture, forestry, fishing and hunting","Fishing, hunting and trapping"
+115,"Agriculture, forestry, fishing and hunting",Support activities for agriculture and forestry
+211,"Mining, Quarrying, and Oil and Gas Extraction",Oil and gas extraction
+212,"Mining, Quarrying, and Oil and Gas Extraction",Mining and quarrying (except oil and gas)
+213,"Mining, Quarrying, and Oil and Gas Extraction","Support activities for mining, and oil and gas extraction"
+221,Utilities,Utilities
+236,Construction,Construction of buildings
+237,Construction,Heavy and civil engineering construction
+238,Construction,Specialty trade contractors
+311,Manufacturing,Food manufacturing
+312,Manufacturing,Beverage and tobacco product manufacturing
+313,Manufacturing,Textile mills
+314,Manufacturing,Textile product mills
+315,Manufacturing,Clothing manufacturing
+316,Manufacturing,Leather and allied product manufacturing
+321,Manufacturing,Wood product manufacturing
+322,Manufacturing,Paper manufacturing
+323,Manufacturing,Printing and related support activities
+324,Manufacturing,Petroleum and coal product manufacturing
+325,Manufacturing,Chemical manufacturing
+326,Manufacturing,Plastics and rubber products manufacturing
+327,Manufacturing,Non-metallic mineral product manufacturing
+331,Manufacturing,Primary metal manufacturing
+332,Manufacturing,Fabricated metal product manufacturing
+333,Manufacturing,Machinery manufacturing
+334,Manufacturing,Computer and electronic product manufacturing
+335,Manufacturing,"Electrical equipment, appliance and component manufacturing"
+336,Manufacturing,Transportation equipment manufacturing
+337,Manufacturing,Furniture and related product manufacturing
+339,Manufacturing,Miscellaneous manufacturing
+441,Wholesale Trade,Farm product merchant wholesalers
+412,Wholesale Trade,Petroleum and petroleum products merchant wholesalers
+413,Wholesale Trade,"Food, beverage and tobacco merchant wholesalers"
+414,Wholesale Trade,Personal and household goods merchant wholesalers
+415,Wholesale Trade,Motor vehicle and motor vehicle parts and accessories merchant wholesalers
+416,Wholesale Trade,Building material and supplies merchant wholesalers
+417,Wholesale Trade,"Machinery, equipment and supplies merchant wholesalers"
+418,Wholesale Trade,Miscellaneous merchant wholesalers
+419,Wholesale Trade,"Business-to-business electronic markets, and agents and brokers"
+441,Retail Trade,Motor vehicle and parts dealers
+442,Retail Trade,Furniture and home furnishings stores
+443,Retail Trade,Electronics and appliance stores
+444,Retail Trade,Building material and garden equipment and supplies dealers
+445,Retail Trade,Food and beverage stores
+446,Retail Trade,Health and personal care stores
+447,Retail Trade,Gasoline stations
+448,Retail Trade,Clothing and clothing accessories stores
+451,Retail Trade,"Sporting goods, hobby, book and music stores"
+452,Retail Trade,General merchandise stores
+453,Retail Trade,Miscellaneous store retailers
+454,Retail Trade,Non-store retailers
+481,Transportation and Warehousing,Air transportation
+482,Transportation and Warehousing,Rail transportation
+483,Transportation and Warehousing,Water transportation
+484,Transportation and Warehousing,Truck transportation
+485,Transportation and Warehousing,Transit and ground passenger transportation
+486,Transportation and Warehousing,Pipeline transportation
+487,Transportation and Warehousing,Scenic and sightseeing transportation
+488,Transportation and Warehousing,Support activities for transportation
+491,Transportation and Warehousing,Postal service
+492,Transportation and Warehousing,Couriers and messengers
+493,Transportation and Warehousing,Warehousing and storage
+511,Information and cultural industries,Publishing industries
+512,Information and cultural industries,Motion picture and sound recording industries
+515,Information and cultural industries,Broadcasting (except Internet)
+517,Information and cultural industries,Telecommunications
+518,Information and cultural industries,"Data processing, hosting, and related services"
+519,Information and cultural industries,Other information services
+521,Finance and Insurance,Monetary authorities - central bank
+522,Finance and Insurance,Credit intermediation and related activities
+523,Finance and Insurance,"Securities, commodity contracts, and other financial investment and related activities"
+524,Finance and Insurance,Insurance carriers and related activities
+526,Finance and Insurance,Funds and other financial vehicles
+531,Real Estate and Rental and Leasing,Real estate
+532,Real Estate and Rental and Leasing,Rental and leasing services
+533,Real Estate and Rental and Leasing,Lessors of non-financial intangible assets (except copyrighted works)
+541,"Professional, Scientific, and Technical Services","Professional, scientific and technical services"
+551,Management of Companies and Enterprises,Management of companies and enterprises
+561,Administrative and Support and Waste Management and Remediation Services,Administrative and support services
+562,Administrative and Support and Waste Management and Remediation Services,Waste management and remediation services
+611,Educational Services,Educational services
+621,Health Care and Social Assistance,Ambulatory health care services
+622,Health Care and Social Assistance,Hospitals
+623,Health Care and Social Assistance,Nursing and residential care facilities
+624,Health Care and Social Assistance,Social assistance
+711,"Arts, Entertainment, and Recreation","Performing arts, spectator sports and related industries"
+712,"Arts, Entertainment, and Recreation",Heritage institutions
+713,"Arts, Entertainment, and Recreation","Amusement, gambling and recreation industries"
+721,Accommodation and Food Services,Accommodation services
+722,Accommodation and Food Services,Food services and drinking places
+811,Other Services (except Public Administration),Repair and maintenance
+812,Other Services (except Public Administration),Personal and laundry services
+813,Other Services (except Public Administration),"Religious, grant-making, civic, and professional and similar organizations"
+814,Other Services (except Public Administration),Private households
+911,Public Administration,Federal government public administration
+912,Public Administration,Provincial and territorial public administration
+913,Public Administration,"Local, municipal and regional public administration"
+914,Public Administration,Aboriginal public administration
+919,Public Administration,International and other extra-territorial public administration
