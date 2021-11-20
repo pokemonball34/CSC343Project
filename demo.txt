@@ -19,7 +19,7 @@ COPY 74
 csc343h-caterovv=> \COPY Companies FROM company-data.csv with csv header
 COPY 75919
 csc343h-caterovv=> \COPY JobSectors FROM sector-data.csv with csv header
-COPY
+COPY 101
 
 --- (b) Run \d on each table --------------------------------------------------
 csc343h-caterovv=> \d
@@ -39,8 +39,8 @@ csc343h-caterovv=> \d Companies
  companyid      | text    |           | not null | 
  companyname    | text    |           | not null | 
  postalcode     | text    |           | not null |
- wardname       | text    |           | not null | 
- numofemployees | integer |           | not null | 
+ wardname       | text    |           |          |
+ numofemployees | integer |           |          |
 Indexes:
     "companies_pkey" PRIMARY KEY, btree (companyid)
 
@@ -60,10 +60,11 @@ Check constraints:
 
 csc343h-caterovv=> \d JobSectors
             Table "jobmarket.jobsectors"
-   Column   | Type | Collation | Nullable | Default 
-------------+------+-----------+----------+---------
- sectorname | text |           | not null | 
- subsector  | text |           | not null | 
+   Column   |  Type   | Collation | Nullable | Default
+------------+---------+-----------+----------+---------
+ sectorid   | integer |           | not null |
+ sectorname | text    |           | not null |
+ subsector  | text    |           | not null |
 Indexes:
     "jobsectors_pkey" PRIMARY KEY, btree (sectorname, subsector)
     
@@ -95,13 +96,13 @@ count
 csc343h-caterovv=> SELECT count(*) FROM NewEstablishments;
  count 
 -------
-    24
+    74
 (1 row)
 
 csc343h-caterovv=> SELECT count(*) FROM JobSectors;
- count 
+ count
 -------
-     0
+   101
 (1 row)
 
 csc343h-caterovv=> SELECT count(*) FROM CityOfTorontoStatistics;
@@ -172,9 +173,16 @@ csc343h-caterovv=> SELECT * FROM NewEstablishments WHERE year = 2019;
  Spadina-Fort York      | 2019 |                 0
 
 csc343h-caterovv=> SELECT * FROM JobSectors WHERE sectorName = 'Real estate and rental and leasing';
- sectorname | subsector 
-------------+-----------
-(0 rows)
+SELECT * FROM JobSectors WHERE sectorName = 'Information and cultural industries';
+ sectorid |             sectorname              |                   subsector
+----------+-------------------------------------+------------------------------------------------
+      511 | Information and cultural industries | Publishing industries
+      512 | Information and cultural industries | Motion picture and sound recording industries
+      515 | Information and cultural industries | Broadcasting (except Internet)
+      517 | Information and cultural industries | Telecommunications
+      518 | Information and cultural industries | Data processing, hosting, and related services
+      519 | Information and cultural industries | Other information services
+(6 rows)
 
 csc343h-caterovv=> SELECT * FROM CityOfTorontoStatistics WHERE year = 2019;
  year | month | emprate | numofemployedcityoftorontoresidents | percentageofselfemployedtorontoresidents | percentageofvacantofficespace | numofemploymentinsurancebeneficiaries | numofbusinesslicencesrenewed | numofnewbusinesslicencesissued 
