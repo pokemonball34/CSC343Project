@@ -23,7 +23,7 @@ CREATE TABLE Companies (
     wardName TEXT,
     numOfEmployees INTEGER,
 
-    PRIMARY KEY (companyID)
+    PRIMARY KEY (companyID),
     FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName),
 );
 
