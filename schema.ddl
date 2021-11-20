@@ -16,18 +16,6 @@ SET SEARCH_PATH TO JobMarket;
 
 -- );
 
-CREATE TABLE Companies (
-    companyID INTEGER NOT NULL,
-    companyName TEXT NOT NULL,
-    postalCode TEXT NOT NULL,
-    wardName TEXT,
-    numOfEmployees INTEGER,
-
-    PRIMARY KEY (companyID)
-    FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName),
-);
-
-
 CREATE TABLE JobSectors (
     sectorName TEXT NOT NULL,
     subSector TEXT NOT NULL,
@@ -43,6 +31,18 @@ CREATE TABLE NewEstablishments (
     PRIMARY KEY (wardName, year),
     CONSTRAINT validyear
         CHECK (year = 2019 OR year = 2020 OR year = 2021)
+);
+
+
+CREATE TABLE Companies (
+    companyID TEXT NOT NULL,
+    companyName TEXT NOT NULL,
+    postalCode TEXT NOT NULL,
+    wardName TEXT,
+    numOfEmployees INTEGER,
+
+    PRIMARY KEY (companyID)
+    -- FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName)
 );
 
 CREATE TABLE CityOfTorontoStatistics (

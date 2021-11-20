@@ -14,7 +14,8 @@ CREATE TABLE
 CREATE TABLE
 
 --LOADING DATA
-\COPY NewEstablishments FROM ward-data.csv with csv
+\COPY NewEstablishments(wardName, year) FROM sample-data.csv with csv header
+COPY 24
 --currently data has a weird parsing issue
 
 --- (b) Run \d on each table --------------------------------------------------
