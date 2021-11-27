@@ -36,12 +36,6 @@ CREATE TABLE JobSectors (
     PRIMARY KEY (sectorName, subSector)
 );
 
-
--- CREATE TABLE Wards (
---     wardName TEXT NOT NULL,
---     PRIMARY KEY (wardName)
--- );
-
 -- NEW TABLE FOR NEW ESTABLISHMENTS
 CREATE TABLE Wards (
     wardName TEXT NOT NULL,
@@ -52,14 +46,6 @@ CREATE TABLE Wards (
     CONSTRAINT validyear
         CHECK (year = 2019 OR year = 2020 OR year = 2021)
 );
-
-
--- No longer have to worry about closed companies
--- CREATE TABLE ClosedCompanies (
---     companyName TEXT NOT NULL,
---     wardName TEXT NOT NULL,
---     closureDate TEXT NOT NULL
--- );
 
 
 CREATE TABLE CityOfTorontoStatistics (
@@ -78,13 +64,3 @@ CREATE TABLE CityOfTorontoStatistics (
     percentageOfVacantOfficeSpace, numOfEmploymentInsuranceBeneficiaries, numOfBusinessLicencesRenewed,
     numOfNewBusinessLicencesIssued)
 );
-
-
-
--- DROP table if exists Jobs cascade;
--- DROP table if exists Companies cascade;
--- DROP table if exists JobSectors cascade;
--- DROP table if exists Wards cascade;
--- DROP table if exists ClosedCompanies cascade;
--- DROP table if exists CityOfTorontoStatistics cascade;
-
