@@ -46,17 +46,33 @@ CREATE TABLE Companies (
     -- FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName)
 );
 
+CREATE TABLE TorontoEmploymentRate{
+    year INTEGER NOT NULL,
+    month INTEGER NOT NULL,
+    employmentRate FLOAT NOT NULL,
+
+    PRIMARY KEY (year, month)
+}
+
+CREATE TABLE EmployedTorontoResidents{
+    year INTEGER NOT NULL,
+    month INTEGER NOT NULL,
+    EmployedCityOfTorontoResidents INTEGER NOT NULL,
+    
+    PRIMARY KEY (year, month)
+}
+
 CREATE TABLE CityOfTorontoStatistics (
     year INTEGER NOT NULL,
     month TEXT NOT NULL,
     -- d DATE NOT NULL,
     empRate FLOAT NOT NULL,
-    numOfEmployedCityOfTorontoResidents INTEGER NOT NULL,
-    percentageOfSelfEmployedTorontoResidents FLOAT NOT NULL,
-    percentageOfVacantOfficeSpace FLOAT NOT NULL,
-    numOfEmploymentInsuranceBeneficiaries INTEGER NOT NULL,
-    numOfBusinessLicencesRenewed INTEGER NOT NULL,
-    numOfNewBusinessLicencesIssued INTEGER NOT NULL,
+    -- numOfEmployedCityOfTorontoResidents INTEGER NOT NULL,
+    -- percentageOfSelfEmployedTorontoResidents FLOAT NOT NULL,
+    -- percentageOfVacantOfficeSpace FLOAT NOT NULL,
+    -- numOfEmploymentInsuranceBeneficiaries INTEGER NOT NULL,
+    -- numOfBusinessLicencesRenewed INTEGER NOT NULL,
+    -- numOfNewBusinessLicencesIssued INTEGER NOT NULL,
 
     PRIMARY KEY (year, month)
 );
