@@ -223,78 +223,26 @@ import math
 
 # CLEANING EMPLOYED CITY OF TORONTO RESIDENTS (000's).csv
 
-numEmployedTorontoResidents = pd.read_csv(
-    "CSC343Project\data-cleaning-files\Employed City of Toronto Residents (000's).csv")
+# numEmployedTorontoResidents = pd.read_csv(
+#     "CSC343Project\data-cleaning-files\Employed City of Toronto Residents (000's).csv")
 
-# january_df = numEmployedTorontoResidents['Jan']
-# february_df = numEmployedTorontoResidents['Feb']
-# march_df = numEmployedTorontoResidents['Mar']
-# april_df = numEmployedTorontoResidents['Apr']
-# may_df = numEmployedTorontoResidents['May']
-# june_df = numEmployedTorontoResidents['Jun']
-# july_df = numEmployedTorontoResidents['Jul']
-# august_df = numEmployedTorontoResidents['Aug']
-# september_df = numEmployedTorontoResidents['Sep']
-# october_df = numEmployedTorontoResidents['Oct']
-# november_df = numEmployedTorontoResidents['Nov']
-# december_df = numEmployedTorontoResidents['Dec']
-# monthly_df = pd.DataFrame(
-#     {'month': ['January'], 'year': ['hello'], 'value': [2]})
-# print(monthly_df)
-# df_list = [january_df, february_df, march_df, april_df, may_df, june_df,
-#            july_df, august_df, september_df, october_df, november_df, december_df]
-
-yearly_dfs = []
-x = slice(4)
-
-for i in range(0, 3):
-    monthly_dfs = []
-    year_row = numEmployedTorontoResidents.loc[i]
-
-    january = year_row['Jun']
-    february = year_row['Feb']
-    march = year_row['Mar']
-    april = year_row['Apr']
-    may = year_row['May']
-    june = year_row['Jun']
-    july = year_row['Jul']
-    august = year_row['Aug']
-    september = year_row['Sep']
-    october = year_row['Oct']
-    november = year_row['Nov']
-    december = year_row['Dec']
-
-    months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
-              [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
-#
-    for month_value in months:
-        month = month_value[1]
-        value = month_value[0]
-        if(type(value) == float):
-            if(math.isnan(value)):
-                value = 0
-        if(type(value) != float):
-            value = float(value)
-            if(math.isnan(value)):
-                value = 0
-        if(type(value) == float):
-            value = int(value) * 1000
-        monthly_df = pd.DataFrame(
-            {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
-        monthly_dfs.append(monthly_df)
-
-    year_df = pd.concat(monthly_dfs, ignore_index=True)
-    yearly_dfs.append(year_df)
-
-final_df = pd.concat(yearly_dfs, ignore_index=True)
-final_df.to_csv('employed-toronto-residents-data.csv',
-                index=False, header=False)
-
-
-# CLEANING Average Actual Hours at Main Job (worked in reference week).csv
-
-# avgHoursAtMainJobDf = pd.read_csv(
-#     "CSC343Project\data-cleaning-files\Average Actual Hours at Main Job (worked in reference week).csv")
+# # january_df = numEmployedTorontoResidents['Jan']
+# # february_df = numEmployedTorontoResidents['Feb']
+# # march_df = numEmployedTorontoResidents['Mar']
+# # april_df = numEmployedTorontoResidents['Apr']
+# # may_df = numEmployedTorontoResidents['May']
+# # june_df = numEmployedTorontoResidents['Jun']
+# # july_df = numEmployedTorontoResidents['Jul']
+# # august_df = numEmployedTorontoResidents['Aug']
+# # september_df = numEmployedTorontoResidents['Sep']
+# # october_df = numEmployedTorontoResidents['Oct']
+# # november_df = numEmployedTorontoResidents['Nov']
+# # december_df = numEmployedTorontoResidents['Dec']
+# # monthly_df = pd.DataFrame(
+# #     {'month': ['January'], 'year': ['hello'], 'value': [2]})
+# # print(monthly_df)
+# # df_list = [january_df, february_df, march_df, april_df, may_df, june_df,
+# #            july_df, august_df, september_df, october_df, november_df, december_df]
 
 # yearly_dfs = []
 # x = slice(4)
@@ -330,7 +278,7 @@ final_df.to_csv('employed-toronto-residents-data.csv',
 #             if(math.isnan(value)):
 #                 value = 0
 #         if(type(value) == float):
-#             value = int(value)
+#             value = int(value) * 1000
 #         monthly_df = pd.DataFrame(
 #             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
 #         monthly_dfs.append(monthly_df)
@@ -341,3 +289,54 @@ final_df.to_csv('employed-toronto-residents-data.csv',
 # final_df = pd.concat(yearly_dfs, ignore_index=True)
 # final_df.to_csv('employed-toronto-residents-data.csv',
 #                 index=False, header=False)
+
+
+# CLEANING Average Actual Hours at Main Job (worked in reference week).csv
+
+avgHoursAtMainJobDf = pd.read_csv(
+    "CSC343Project/data-cleaning-files/Average Actual Hours at Main Job (worked in reference week).csv")
+
+yearly_dfs = []
+x = slice(4)
+
+for i in range(0, 3):
+    monthly_dfs = []
+    year_row = avgHoursAtMainJobDf.loc[i]
+
+    january = year_row['Jun']
+    february = year_row['Feb']
+    march = year_row['Mar']
+    april = year_row['Apr']
+    may = year_row['May']
+    june = year_row['Jun']
+    july = year_row['Jul']
+    august = year_row['Aug']
+    september = year_row['Sep']
+    october = year_row['Oct']
+    november = year_row['Nov']
+    december = year_row['Dec']
+
+    months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+              [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+#
+    for month_value in months:
+        month = month_value[1]
+        value = month_value[0]
+        if(type(value) == float):
+            if(math.isnan(value)):
+                value = 0
+        if(type(value) != float):
+            value = float(value)
+            if(math.isnan(value)):
+                value = 0
+
+        monthly_df = pd.DataFrame(
+            {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+        monthly_dfs.append(monthly_df)
+
+    year_df = pd.concat(monthly_dfs, ignore_index=True)
+    yearly_dfs.append(year_df)
+
+final_df = pd.concat(yearly_dfs, ignore_index=True)
+final_df.to_csv('avg-actual-hours-at-main-job-data.csv',
+                index=False, header=False)
