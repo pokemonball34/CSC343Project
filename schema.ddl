@@ -36,13 +36,15 @@ CREATE TABLE NewEstablishments (
 
 
 CREATE TABLE Companies (
-    companyID TEXT NOT NULL,
+    companyID INT NOT NULL,
     companyName TEXT NOT NULL,
     postalCode TEXT NOT NULL,
     wardName TEXT,
-    numOfEmployees INTEGER,
+    numOfEmployees INT,
+    sectorID INT NOT NULL,
 
     PRIMARY KEY (companyID)
+    FOREIGN KEY (sectorID) REFERENCES JobSectors(sectorID)
     -- FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName)
 );
 

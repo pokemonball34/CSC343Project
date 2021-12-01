@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Companies Table
 col_list = ['Category', 'Licence No.', 'Operating Name', 'Licence Address Line 3']
@@ -14,20 +15,108 @@ com_data.drop_duplicates(subset="companyName", inplace=True)
 com_data.dropna(subset=["companyName"], inplace=True)
 com_data.dropna(subset=["postalCode"], inplace=True)
 
-# Postal Code to Ward Dictionary
-codeToWard = {
-    "M9N": "York South-Weston",
-    "M3J": "Humber River-Black Creek",
+print(com_data['companyType'].unique())
 
+# Company Type to Sector ID Dictionary
+categoryToSectorID = {
+    "PRIVATE TRANSPORTATION COMPANY": 485,
+    "TAXICAB BROKER": 485,
+    "LIMOUSINE SERVICE COMPANY": 485,
+    "TAXICAB OPERATOR": 485,
+    "PRIVATE PARKING ENFORCEMENT AGENCY": 812,
+    "SHORT TERM RENTAL COMPANY": 721,
+    "DRIVING SCHOOL OPERATOR (B)": 611,
+    'DRIVE-SELF RENTAL OWNER': 532,
+    'HOLISTIC CENTRE': 621,
+    'ADULT ENTERTAINMENT CLUB': 711,
+    'PLACE OF AMUSEMENT': 713,
+    'BILLIARD HALL': 713,
+    'TEMPORARY SIGN PROVIDER': 561,
+    'BODY RUB PARLOUR': 812,
+    'BOWLING HOUSE': 713,
+    'BOATS FOR HIRE': 532,
+    'CARNIVAL': 713,
+    'CIRCUS': 711,
+    'SMOKE SHOP': 453,
+    'RETAIL STORE (FOOD)': 445,
+    'PERSONAL SERVICES SETTINGS': 812,
+    'LAUNDRY': 812,
+    'VAPOUR PRODUCT RETAILER': 453,
+    'MOTOR VEHICLE RACING': 711,
+    'THEATRE': 711,
+    'PRECIOUS METAL SHOP': 418,
+    'PAWN SHOP': 453,
+    'PET SHOP': 453,
+    'BATH HOUSE': 812,
+    'PUBLIC GARAGE': 812,
+    'AUTO SERVICE STATION': 811,
+    'PUBLIC HALL': 913,
+    'EATING ESTABLISHMENT': 722,
+    'SECOND HAND SHOP': 453,
+    'SECOND HAND SALVAGE YARD': 415,
+    'SECOND HAND SALVAGE SHOP': 415,
+    'COMMERCIAL PARKING LOT': 812,
+    'SWIMMING POOL': 561,
+    'PAYDAY LOAN': 522,
+    'CLOTHING DROP BOX OPERATOR': 448,
+    'ENTERTAINMENT ESTABLISHMENT/NIGHTCLUB': 722,
+    'TEMPORARY SIGN - A-FRAME': 238,
+    'TEMPORARY SIGN - MOBILE': 238,
+    'TEMPORARY SIGN - NEW DEVELOPMENT': 238,
+    'TEMPORARY SIGN - GROUND-MOUNTED': 238,
+    'TEMPORARY SIGN - PORTABLE': 238,
+    'PERMANENT FIREWORKS VENDOR': 423,
+    'TEMPORARY FIREWORKS VENDOR (UNDER 25 KG)': 423,
+    'TEMPORARY FIREWORKS VENDOR (OVER 25 KG)': 423,
+    'TEMPORARY LEASE FIREWORKS VENDOR': 423,
+    'TEMPORARY MOBILE FIREWORKS VENDOR': 423,
+    'CLOTHING DROP BOX LOCATION PERMIT': 448,
+    'SIDEWALK VENDING': 454,
+    'MOBILE VENDING (FOOD TRUCK)': 722,
+    'CURBLANE VENDING': 454,
+    'MOBILE VENDING (ICE CREAM TRUCK)': 722,
+    'SIDEWALK CAFE': 722,
+    'MARKETING DISPLAY': 541,
+    'HAWKER/PEDLAR ON FOOT': 722,
+    'TRANSIENT TRADER': 425,
+    'INSULATION INSTALLER': 238,
+    'BUILDING CLEANER': 561,
+    'ADVERTISING': 541,
+    'AUCTIONEER': 561,
+    'BILL DISTRIBUTOR': 522,
+    'BUILDING RENOVATOR': 236,
+    'CHIMNEY REPAIRMAN': 561,
+    'DRAIN CONTRACTOR': 238,
+    'DRAIN LAYER': 238,
+    'HEATING CONTRACTOR': 238,
+    'PLUMBING & HEATING CONTRACTOR': 238,
+    'DRIVEWAY PAVING CONTRACTOR': 238,
+    'PLUMBING CONTRACTOR': 238,
+    'MASTER PLUMBER': 238,
+    'MASTER HEATING INSTALLER': 238,
+    'TORONTO TAXICAB OWNER': 485,
+    'TAXICAB OWNER': 485,
+    'LIMOUSINE OWNER': 485,
+    'TOW TRUCK OWNER': 488,
+    'DRIVING INSTRUCTOR (V)': 611,
+    'DRIVING SCHOOL OPERATOR (V)': 611,
+    'MOTORIZED REFRESHMENT VEHICLE OWNER': 722,
+    'PEDICAB OWNER': 485,
+    'HAWKER/PEDLAR WITH MOTOR VEHICLE': 722,
+    'HAWKER/PEDLAR WITH PUSH CART': 722,
+    'COLLECTOR OF SECOND HAND GOODS': 453,
+    'NON-MOTORIZED REFRESHMENT VEHICLE OWNER': 722
 }
 
 company = com_data[["companyID", "companyName", "postalCode"]]
+company["companyID"] = range(1, len(company) + 1)
 company["wardName"] = ""
 company["numOfEmployees"] = ""
+company["sectorID"] = com_data['companyType'].map(categoryToSectorID)
 
 company.to_csv('company-data.csv', index=False, header=False)
 
-
+sectorData = pd.read_csv('Datasets/business_licences.csv', usecols=col_list)
 
 
 
