@@ -38,14 +38,13 @@ CREATE TABLE NewEstablishments (
 CREATE TABLE Companies (
     companyID INT NOT NULL,
     companyName TEXT NOT NULL,
-    postalCode TEXT NOT NULL,
     wardName TEXT,
     numOfEmployees INT,
     sectorID INT NOT NULL,
 
     PRIMARY KEY (companyID)
     FOREIGN KEY (sectorID) REFERENCES JobSectors(sectorID)
-    -- FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName)
+    FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName)
 );
 
 CREATE TABLE CityOfTorontoStatistics (

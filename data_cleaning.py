@@ -1,21 +1,23 @@
 import pandas as pd
 import numpy as np
+import glob
 
 # Companies Table
-col_list = ['Category', 'Licence No.', 'Operating Name', 'Licence Address Line 3']
+col_list = ['Category', 'Licence No.', 'Operating Name', 'Licence Address Line 1']
 col_names = {
     "Category": "companyType",
     "Licence No.": "companyID",
     "Operating Name": "companyName",
-    "Licence Address Line 3": "postalCode"
+    "Licence Address Line 1": "address"
 }
 com_data = pd.read_csv('Datasets/business_licences.csv', usecols=col_list)
 com_data = com_data.rename(columns=col_names)
+com_data['address'] = com_data['address'].astype(str)
+com_data['address'] = com_data['address'].str.lower()
 com_data.drop_duplicates(subset="companyName", inplace=True)
 com_data.dropna(subset=["companyName"], inplace=True)
-com_data.dropna(subset=["postalCode"], inplace=True)
+com_data.dropna(subset=["address"], inplace=True)
 
-print(com_data['companyType'].unique())
 
 # Company Type to Sector ID Dictionary
 categoryToSectorID = {
@@ -108,15 +110,19 @@ categoryToSectorID = {
     'NON-MOTORIZED REFRESHMENT VEHICLE OWNER': 722
 }
 
-company = com_data[["companyID", "companyName", "postalCode"]]
-company["companyID"] = range(1, len(company) + 1)
-company["wardName"] = ""
-company["numOfEmployees"] = ""
-company["sectorID"] = com_data['companyType'].map(categoryToSectorID)
+# Importing the Addresses to Wards table
+address_frame = pd.read_csv('address-data.csv', dtype={'address': str, 'wardName': str})
+address_frame['address'] = address_frame['address'].str.lower()
 
-company.to_csv('company-data.csv', index=False, header=False)
+# Putting it all together
+com_data = pd.merge(com_data, address_frame, how='left', on='address')
+com_data['companyID'] = range(1, len(com_data) + 1)
+com_data['numOfEmployees'] = ''
+com_data['sectorID'] = com_data['companyType'].map(categoryToSectorID)
+com_data.drop(columns=['companyType', 'address'], inplace=True)
+print(com_data)
 
-sectorData = pd.read_csv('Datasets/business_licences.csv', usecols=col_list)
+com_data.to_csv('company-data.csv', index=False, header=False)
 
 
 
