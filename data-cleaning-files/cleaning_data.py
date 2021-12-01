@@ -293,28 +293,389 @@ import math
 
 # CLEANING Average Actual Hours at Main Job (worked in reference week).csv
 
-avgHoursAtMainJobDf = pd.read_csv(
-    "CSC343Project/data-cleaning-files/Average Actual Hours at Main Job (worked in reference week).csv")
+# avgHoursAtMainJobDf = pd.read_csv(
+#     "CSC343Project/data-cleaning-files/Average Actual Hours at Main Job (worked in reference week).csv")
+
+# yearly_dfs = []
+# x = slice(4)
+
+# for i in range(0, 3):
+#     monthly_dfs = []
+#     year_row = avgHoursAtMainJobDf.loc[i]
+
+#     january = year_row['Jan']
+#     february = year_row['Feb']
+#     march = year_row['Mar']
+#     april = year_row['Apr']
+#     may = year_row['May']
+#     june = year_row['Jun']
+#     july = year_row['Jul']
+#     august = year_row['Aug']
+#     september = year_row['Sep']
+#     october = year_row['Oct']
+#     november = year_row['Nov']
+#     december = year_row['Dec']
+
+#     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+#               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+# #
+#     for month_value in months:
+#         month = month_value[1]
+#         value = month_value[0]
+#         if(type(value) == float):
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) != float):
+#             value = float(value)
+#             if(math.isnan(value)):
+#                 value = 0
+
+#         monthly_df = pd.DataFrame(
+#             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+#         monthly_dfs.append(monthly_df)
+
+#     year_df = pd.concat(monthly_dfs, ignore_index=True)
+#     yearly_dfs.append(year_df)
+
+# final_df = pd.concat(yearly_dfs, ignore_index=True)
+# final_df.to_csv('avg-actual-hours-at-main-job-data.csv',
+#                 index=False, header=False)
+
+# CLEANING NUMBER OF BUSINESS BANKRUPTCIES
+# numBusBankruptcies = pd.read_csv(
+#     "CSC343Project/data-cleaning-files/Number of Business Bankruptcies (Ontario) .csv")
+
+# yearly_dfs = []
+# x = slice(4)
+
+# for i in range(0, 3):
+#     monthly_dfs = []
+#     year_row = numBusBankruptcies.loc[i]
+
+#     january = year_row['Jan']
+#     february = year_row['Feb']
+#     march = year_row['Mar']
+#     april = year_row['Apr']
+#     may = year_row['May']
+#     june = year_row['Jun']
+#     july = year_row['Jul']
+#     august = year_row['Aug']
+#     september = year_row['Sep']
+#     october = year_row['Oct']
+#     november = year_row['Nov']
+#     december = year_row['Dec']
+
+#     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+#               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+# #
+#     for month_value in months:
+#         month = month_value[1]
+#         value = month_value[0]
+#         if(type(value) == float):
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) != float):
+#             value = float(value)
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) == float):
+#             value = int(value)
+
+#         monthly_df = pd.DataFrame(
+#             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+#         monthly_dfs.append(monthly_df)
+
+#     year_df = pd.concat(monthly_dfs, ignore_index=True)
+#     yearly_dfs.append(year_df)
+
+# final_df = pd.concat(yearly_dfs, ignore_index=True)
+# final_df.to_csv('CSC343Project/cleaned/number-of-business-bankruptcies-data.csv',
+#                 index=False, header=False)
+
+
+# CLEANING NUMBER OF BUSINESS LICENCES RENEWED
+# numBusLicencesRenewed = pd.read_csv(
+#     "CSC343Project/data-cleaning-files/Number of Business Licences Renewed .csv")
+
+# yearly_dfs = []
+# x = slice(4)
+
+# for i in range(0, 3):
+#     monthly_dfs = []
+#     year_row = numBusLicencesRenewed.loc[i]
+
+#     january = year_row['Jan']
+#     february = year_row['Feb']
+#     march = year_row['Mar']
+#     april = year_row['Apr']
+#     may = year_row['May']
+#     june = year_row['Jun']
+#     july = year_row['Jul']
+#     august = year_row['Aug']
+#     september = year_row['Sep']
+#     october = year_row['Oct']
+#     november = year_row['Nov']
+#     december = year_row['Dec']
+
+#     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+#               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+# #
+#     for month_value in months:
+#         month = month_value[1]
+#         value = month_value[0]
+#         if(type(value) == float):
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) != float):
+#             value = float(value)
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) == float):
+#             value = int(value)
+
+#         monthly_df = pd.DataFrame(
+#             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+#         monthly_dfs.append(monthly_df)
+
+#     year_df = pd.concat(monthly_dfs, ignore_index=True)
+#     yearly_dfs.append(year_df)
+
+# final_df = pd.concat(yearly_dfs, ignore_index=True)
+# final_df.to_csv('CSC343Project/cleaned/number-of-business-licences-renewed-data.csv',
+#                 index=False, header=False)
+
+# CLEANING NUMBER OF EI Beneficiaries
+# numEIBeneficiaries = pd.read_csv(
+#     "CSC343Project/data-cleaning-files/Number of Employment Insurance (E.I.) Beneficiaries .csv")
+
+# yearly_dfs = []
+# x = slice(4)
+
+# for i in range(0, 3):
+#     monthly_dfs = []
+#     year_row = numEIBeneficiaries.loc[i]
+
+#     january = year_row['Jan']
+#     february = year_row['Feb']
+#     march = year_row['Mar']
+#     april = year_row['Apr']
+#     may = year_row['May']
+#     june = year_row['Jun']
+#     july = year_row['Jul']
+#     august = year_row['Aug']
+#     september = year_row['Sep']
+#     october = year_row['Oct']
+#     november = year_row['Nov']
+#     december = year_row['Dec']
+
+#     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+#               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+# #
+#     for month_value in months:
+#         month = month_value[1]
+#         value = month_value[0]
+#         if(type(value) == float):
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) != float):
+#             value = float(value)
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) == float):
+#             value = int(value)
+
+#         monthly_df = pd.DataFrame(
+#             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+#         monthly_dfs.append(monthly_df)
+
+#     year_df = pd.concat(monthly_dfs, ignore_index=True)
+#     yearly_dfs.append(year_df)
+
+# final_df = pd.concat(yearly_dfs, ignore_index=True)
+# final_df.to_csv('CSC343Project/cleaned/number-of-EI-beneficiaries-data.csv',
+#                 index=False, header=False)
+
+
+# # CLEANING NUMBER OF HOME SALES TORONTO
+# numHomeSales = pd.read_csv(
+#     "CSC343Project/data-cleaning-files/Number of Home Sales (City of Toronto).csv")
+
+# yearly_dfs = []
+# x = slice(4)
+
+# for i in range(0, 3):
+#     monthly_dfs = []
+#     year_row = numHomeSales.loc[i]
+
+#     january = year_row['Jan']
+#     february = year_row['Feb']
+#     march = year_row['Mar']
+#     april = year_row['Apr']
+#     may = year_row['May']
+#     june = year_row['Jun']
+#     july = year_row['Jul']
+#     august = year_row['Aug']
+#     september = year_row['Sep']
+#     october = year_row['Oct']
+#     november = year_row['Nov']
+#     december = year_row['Dec']
+
+#     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+#               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+# #
+#     for month_value in months:
+#         month = month_value[1]
+#         value = month_value[0]
+#         if(type(value) == float):
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) != float):
+#             value = float(value)
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) == float):
+#             value = int(value)
+
+#         monthly_df = pd.DataFrame(
+#             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+#         monthly_dfs.append(monthly_df)
+
+#     year_df = pd.concat(monthly_dfs, ignore_index=True)
+#     yearly_dfs.append(year_df)
+
+# final_df = pd.concat(yearly_dfs, ignore_index=True)
+# final_df.to_csv('CSC343Project/cleaned/number-of-toronto-home-sales-data.csv',
+#                 index=False, header=False)
+
+# CLEANING NUMBER OF NEW BUSINESS LICENCES ISSUED
+# numBusinessLicencesIssued = pd.read_csv(
+#     "CSC343Project/data-cleaning-files/Number of New Business Licences Issued .csv")
+
+# yearly_dfs = []
+# x = slice(4)
+
+# for i in range(0, 3):
+#     monthly_dfs = []
+#     year_row = numBusinessLicencesIssued.loc[i]
+
+#     january = year_row['Jan']
+#     february = year_row['Feb']
+#     march = year_row['Mar']
+#     april = year_row['Apr']
+#     may = year_row['May']
+#     june = year_row['Jun']
+#     july = year_row['Jul']
+#     august = year_row['Aug']
+#     september = year_row['Sep']
+#     october = year_row['Oct']
+#     november = year_row['Nov']
+#     december = year_row['Dec']
+
+#     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+#               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+# #
+#     for month_value in months:
+#         month = month_value[1]
+#         value = month_value[0]
+#         if(type(value) == float):
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) != float):
+#             value = float(value)
+#             if(math.isnan(value)):
+#                 value = 0
+#         if(type(value) == float):
+#             value = int(value)
+
+#         monthly_df = pd.DataFrame(
+#             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+#         monthly_dfs.append(monthly_df)
+
+#     year_df = pd.concat(monthly_dfs, ignore_index=True)
+#     yearly_dfs.append(year_df)
+
+# final_df = pd.concat(yearly_dfs, ignore_index=True)
+# final_df.to_csv('CSC343Project/cleaned/number-of-new-business-licences-issued.csv',
+#                 index=False, header=False)
+
+
+# CLEANING PERCENTAGE OF SELF EMPLOYED TORONTO
+# percentageSelfEmployed = pd.read_csv(
+#     "CSC343Project/data-cleaning-files/Percentage who are Self-Employed (Toronto Residents).csv")
+
+# yearly_dfs = []
+# x = slice(4)
+# y = slice(3)
+
+# for i in range(0, 3):
+#     monthly_dfs = []
+#     year_row = percentageSelfEmployed.loc[i]
+
+#     january = year_row['Jan']
+#     february = year_row['Feb']
+#     march = year_row['Mar']
+#     april = year_row['Apr']
+#     may = year_row['May']
+#     june = year_row['Jun']
+#     july = year_row['Jul']
+#     august = year_row['Aug']
+#     september = year_row['Sep']
+#     october = year_row['Oct']
+#     november = year_row['Nov']
+#     december = year_row['Dec']
+
+#     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+#               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+# #
+#     for month_value in months:
+#         month = month_value[1]
+#         value = month_value[0]
+#         if(type(value) == str):
+#             value = value[x]
+#         if(type(value) == float):
+#             if(math.isnan(value)):
+#                 value = 0
+#         # if(type(value) != float):
+#         #     value = float(value)
+#         #     if(math.isnan(value)):
+#         #         value = 0
+
+#         monthly_df = pd.DataFrame(
+#             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+#         monthly_dfs.append(monthly_df)
+
+#     year_df = pd.concat(monthly_dfs, ignore_index=True)
+#     yearly_dfs.append(year_df)
+
+# final_df = pd.concat(yearly_dfs, ignore_index=True)
+# final_df.to_csv('CSC343Project/cleaned/percentage-self-employed-toronto-data.csv',
+#                 index=False, header=False)
+
+
+# CLEANING PERCENTAGE OF VACANT OFFICE SPACE TORONTO
+percentageVacantOfficeSpace = pd.read_csv(
+    "CSC343Project/data-cleaning-files/Percentage of Vacant Office Space .csv")
 
 yearly_dfs = []
 x = slice(4)
+y = slice(3)
 
 for i in range(0, 3):
     monthly_dfs = []
-    year_row = avgHoursAtMainJobDf.loc[i]
+    year_row = percentageVacantOfficeSpace.loc[i]
 
-    january = year_row['Jun']
-    february = year_row['Feb']
-    march = year_row['Mar']
-    april = year_row['Apr']
-    may = year_row['May']
-    june = year_row['Jun']
-    july = year_row['Jul']
-    august = year_row['Aug']
-    september = year_row['Sep']
-    october = year_row['Oct']
-    november = year_row['Nov']
-    december = year_row['Dec']
+    january = year_row['Q1']
+    february = year_row['Q1']
+    march = year_row['Q1']
+    april = year_row['Q2']
+    may = year_row['Q2']
+    june = year_row['Q2']
+    july = year_row['Q3']
+    august = year_row['Q3']
+    september = year_row['Q3']
+    october = year_row['Q4']
+    november = year_row['Q4']
+    december = year_row['Q4']
 
     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
@@ -322,13 +683,18 @@ for i in range(0, 3):
     for month_value in months:
         month = month_value[1]
         value = month_value[0]
+        if(type(value) == str):
+            if len(value) > 4:
+                value = value[x]
+            else:
+                value = value[y]
         if(type(value) == float):
             if(math.isnan(value)):
                 value = 0
-        if(type(value) != float):
-            value = float(value)
-            if(math.isnan(value)):
-                value = 0
+        # if(type(value) != float):
+        #     value = float(value)
+        #     if(math.isnan(value)):
+        #         value = 0
 
         monthly_df = pd.DataFrame(
             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
@@ -338,5 +704,5 @@ for i in range(0, 3):
     yearly_dfs.append(year_df)
 
 final_df = pd.concat(yearly_dfs, ignore_index=True)
-final_df.to_csv('avg-actual-hours-at-main-job-data.csv',
+final_df.to_csv('CSC343Project/cleaned/percentage-vacant-office-space-toronto-data.csv',
                 index=False, header=False)
