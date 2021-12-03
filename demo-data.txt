@@ -1,8 +1,7 @@
 --- (a) Load schema and data --------------------------------------------------
-csc343h-caterovv=> \i schema.ddl
-psql:schema.ddl:1: NOTICE:  drop cascades to 4 other objects
-DETAIL:  drop cascades to table companies
-drop cascades to table jobsectors
+csc343h-caterovv-> \i schema.ddl
+psql:schema.ddl:1: NOTICE:  drop cascades to 3 other objects
+DETAIL:  drop cascades to table jobsectors
 drop cascades to table wards
 drop cascades to table cityoftorontostatistics
 DROP SCHEMA
@@ -14,6 +13,8 @@ CREATE TABLE
 CREATE TABLE
 
 --LOADING DATA
+csc343h-caterovv=> \COPY CityOfTorontoStatistics FROM data/toronto-stats-data.csv with csv header
+COPY 36
 csc343h-caterovv=> \COPY NewEstablishments(wardName, year) FROM ward-data.csv with csv header
 COPY 74
 csc343h-caterovv=> \COPY Companies FROM company-data.csv with csv header

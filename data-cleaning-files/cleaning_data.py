@@ -653,56 +653,101 @@ import math
 
 
 # CLEANING PERCENTAGE OF VACANT OFFICE SPACE TORONTO
-percentageVacantOfficeSpace = pd.read_csv(
-    "CSC343Project/data-cleaning-files/Percentage of Vacant Office Space .csv")
+# percentageVacantOfficeSpace = pd.read_csv(
+#     "CSC343Project/data-cleaning-files/Percentage of Vacant Office Space .csv")
 
-yearly_dfs = []
-x = slice(4)
-y = slice(3)
+# yearly_dfs = []
+# x = slice(4)
+# y = slice(3)
 
-for i in range(0, 3):
-    monthly_dfs = []
-    year_row = percentageVacantOfficeSpace.loc[i]
+# for i in range(0, 3):
+#     monthly_dfs = []
+#     year_row = percentageVacantOfficeSpace.loc[i]
 
-    january = year_row['Q1']
-    february = year_row['Q1']
-    march = year_row['Q1']
-    april = year_row['Q2']
-    may = year_row['Q2']
-    june = year_row['Q2']
-    july = year_row['Q3']
-    august = year_row['Q3']
-    september = year_row['Q3']
-    october = year_row['Q4']
-    november = year_row['Q4']
-    december = year_row['Q4']
+#     january = year_row['Q1']
+#     february = year_row['Q1']
+#     march = year_row['Q1']
+#     april = year_row['Q2']
+#     may = year_row['Q2']
+#     june = year_row['Q2']
+#     july = year_row['Q3']
+#     august = year_row['Q3']
+#     september = year_row['Q3']
+#     october = year_row['Q4']
+#     november = year_row['Q4']
+#     december = year_row['Q4']
 
-    months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
-              [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
-#
-    for month_value in months:
-        month = month_value[1]
-        value = month_value[0]
-        if(type(value) == str):
-            if len(value) > 4:
-                value = value[x]
-            else:
-                value = value[y]
-        if(type(value) == float):
-            if(math.isnan(value)):
-                value = 0
-        # if(type(value) != float):
-        #     value = float(value)
-        #     if(math.isnan(value)):
-        #         value = 0
+#     months = [[january, 'January'], [february, 'February'], [march, 'March'], [april, 'April'], [may, 'May'], [june, 'June'],
+#               [july, 'July'], [august, 'August'], [september, 'September'], [october, 'October'], [november, 'November'], [december, 'December']]
+# #
+#     for month_value in months:
+#         month = month_value[1]
+#         value = month_value[0]
+#         if(type(value) == str):
+#             if len(value) > 4:
+#                 value = value[x]
+#             else:
+#                 value = value[y]
+#         if(type(value) == float):
+#             if(math.isnan(value)):
+#                 value = 0
+#         # if(type(value) != float):
+#         #     value = float(value)
+#         #     if(math.isnan(value)):
+#         #         value = 0
 
-        monthly_df = pd.DataFrame(
-            {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
-        monthly_dfs.append(monthly_df)
+#         monthly_df = pd.DataFrame(
+#             {'month': [month], 'year': [year_row['Year'][x]], 'value': [value]})
+#         monthly_dfs.append(monthly_df)
 
-    year_df = pd.concat(monthly_dfs, ignore_index=True)
-    yearly_dfs.append(year_df)
+#     year_df = pd.concat(monthly_dfs, ignore_index=True)
+#     yearly_dfs.append(year_df)
 
-final_df = pd.concat(yearly_dfs, ignore_index=True)
-final_df.to_csv('CSC343Project/cleaned/percentage-vacant-office-space-toronto-data.csv',
-                index=False, header=False)
+# final_df = pd.concat(yearly_dfs, ignore_index=True)
+# final_df.to_csv('CSC343Project/cleaned/percentage-vacant-office-space-toronto-data.csv',
+#                 index=False, header=False)
+
+
+employmentRate = pd.read_csv(
+    "CSC343Project/cleaned/toronto-employment-rate-data.csv")
+numOfEmployedCityOfTorontoResidents = pd.read_csv(
+    "CSC343Project/cleaned/employed-toronto-residents-000s-data.csv")
+avgHoursAtMainJob = pd.read_csv(
+    "CSC343Project/cleaned/avg-actual-hours-at-main-job-data.csv")
+percentageOfSelfEmployedTorontoResidents = pd.read_csv(
+    "CSC343Project/cleaned/percentage-self-employed-toronto-data.csv")
+percentageOfVacantOfficeSpace = pd.read_csv(
+    "CSC343Project/cleaned/percentage-vacant-office-space-toronto-data.csv")
+numOfEIBeneficiaries = pd.read_csv(
+    "CSC343Project/cleaned/number-of-EI-beneficiaries-data.csv")
+numOfBusinessLicencesRenewed = pd.read_csv(
+    "CSC343Project/cleaned/number-of-business-licences-renewed-data.csv")
+numOfNewBusinessLicencesIssued = pd.read_csv(
+    "CSC343Project/cleaned/number-of-new-business-licences-issued-data.csv")
+numOfTorontoHomesSold = pd.read_csv(
+    "CSC343Project/cleaned/number-of-toronto-home-sales-data.csv")
+
+numOfBusincessBankruptcies = pd.read_csv(
+    "CSC343Project/cleaned/number-of-business-bankruptcies-data.csv")
+output1 = pd.merge(employmentRate, numOfEmployedCityOfTorontoResidents,
+                   on=['Year', 'Month'])
+output2 = pd.merge(output1, avgHoursAtMainJob,
+                   on=['Year', 'Month'])
+output3 = pd.merge(output2, percentageOfSelfEmployedTorontoResidents,
+                   on=['Year', 'Month'])
+output4 = pd.merge(output3, percentageOfVacantOfficeSpace,
+                   on=['Year', 'Month'])
+output5 = pd.merge(output4, numOfEIBeneficiaries,
+                   on=['Year', 'Month'])
+output6 = pd.merge(output5, numOfBusinessLicencesRenewed,
+                   on=['Year', 'Month'])
+output7 = pd.merge(output6, numOfBusincessBankruptcies,
+                   on=['Year', 'Month'])
+output8 = pd.merge(output7, numOfNewBusinessLicencesIssued,
+                   on=['Year', 'Month'])
+output9 = pd.merge(output8, numOfTorontoHomesSold,
+                   on=['Year', 'Month'])
+
+
+output9.to_csv(
+    'CSC343Project/cleaned/sample-data/toronto-stats-data.csv', index=False)

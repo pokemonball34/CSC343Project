@@ -6,17 +6,18 @@
 --
 \echo -------------------- Loading schema and data: -------------------- 
 \echo
-\i schema.txt
+\i schema.ddl
 \i data.txt
 \echo
 \echo  -------------------- Investigative Question 1: ------------------ 
+\echo  How did
 \echo
-\i iq1.txt
+\i sql-queries/queries-question1.sql
 \echo
 \echo  -------------------- Investigative Question 2: ------------------ 
 \echo
-\i iq2.txt
+\i sql-queries/queries-question2.sql
 \echo
 \echo  -------------------- Investigative Question 2: ------------------
 \echo
-\i iq3.txt
+\i sql-queries/queries-question3.sql
