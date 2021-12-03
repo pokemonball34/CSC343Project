@@ -226,23 +226,23 @@ import math
 # numEmployedTorontoResidents = pd.read_csv(
 #     "CSC343Project\data-cleaning-files\Employed City of Toronto Residents (000's).csv")
 
-# # january_df = numEmployedTorontoResidents['Jan']
-# # february_df = numEmployedTorontoResidents['Feb']
-# # march_df = numEmployedTorontoResidents['Mar']
-# # april_df = numEmployedTorontoResidents['Apr']
-# # may_df = numEmployedTorontoResidents['May']
-# # june_df = numEmployedTorontoResidents['Jun']
-# # july_df = numEmployedTorontoResidents['Jul']
-# # august_df = numEmployedTorontoResidents['Aug']
-# # september_df = numEmployedTorontoResidents['Sep']
-# # october_df = numEmployedTorontoResidents['Oct']
-# # november_df = numEmployedTorontoResidents['Nov']
-# # december_df = numEmployedTorontoResidents['Dec']
-# # monthly_df = pd.DataFrame(
-# #     {'month': ['January'], 'year': ['hello'], 'value': [2]})
-# # print(monthly_df)
-# # df_list = [january_df, february_df, march_df, april_df, may_df, june_df,
-# #            july_df, august_df, september_df, october_df, november_df, december_df]
+# january_df = numEmployedTorontoResidents['Jan']
+# february_df = numEmployedTorontoResidents['Feb']
+# march_df = numEmployedTorontoResidents['Mar']
+# april_df = numEmployedTorontoResidents['Apr']
+# may_df = numEmployedTorontoResidents['May']
+# june_df = numEmployedTorontoResidents['Jun']
+# july_df = numEmployedTorontoResidents['Jul']
+# august_df = numEmployedTorontoResidents['Aug']
+# september_df = numEmployedTorontoResidents['Sep']
+# october_df = numEmployedTorontoResidents['Oct']
+# november_df = numEmployedTorontoResidents['Nov']
+# december_df = numEmployedTorontoResidents['Dec']
+# monthly_df = pd.DataFrame(
+#     {'month': ['January'], 'year': ['hello'], 'value': [2]})
+# print(monthly_df)
+# df_list = [january_df, february_df, march_df, april_df, may_df, june_df,
+#            july_df, august_df, september_df, october_df, november_df, december_df]
 
 # yearly_dfs = []
 # x = slice(4)
@@ -251,7 +251,7 @@ import math
 #     monthly_dfs = []
 #     year_row = numEmployedTorontoResidents.loc[i]
 
-#     january = year_row['Jun']
+#     january = year_row['Jan']
 #     february = year_row['Feb']
 #     march = year_row['Mar']
 #     april = year_row['Apr']
