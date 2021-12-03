@@ -19,6 +19,7 @@ CREATE TABLE Wards (
 CREATE TABLE Companies (
     companyID INT NOT NULL,
     companyName TEXT NOT NULL,
+    closeDate DATE,
     wardName TEXT,
     numOfEmployees INT,
     sectorID INT NOT NULL,
