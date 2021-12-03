@@ -43,8 +43,8 @@ CREATE TABLE Companies (
     numOfEmployees INT,
     sectorID INT NOT NULL,
 
-    PRIMARY KEY (companyID)
-    FOREIGN KEY (sectorID) REFERENCES JobSectors(sectorID)
+    PRIMARY KEY (companyID),
+    FOREIGN KEY (sectorID) REFERENCES JobSectors(sectorID),
     FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName)
 );
 
