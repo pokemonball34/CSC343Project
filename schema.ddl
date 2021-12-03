@@ -28,9 +28,7 @@ CREATE TABLE Wards (
     wardName TEXT NOT NULL,
     newEstablishments INTEGER NOT NULL DEFAULT 0,
 
-    PRIMARY KEY (wardName),
-    CONSTRAINT validyear
-        CHECK (year = 2019 OR year = 2020 OR year = 2021)
+    PRIMARY KEY (wardName)
 );
 
 
