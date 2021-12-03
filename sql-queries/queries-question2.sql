@@ -99,8 +99,7 @@ WHERE s1.is_competitive AND s1.year=2019 AND
 -- Your query that answers the question goes below the "insert into" line:
 -- 
 insert into q2
-SELECT sc.wardName, sc.sectorID, js.subSector
+SELECT DISTINCT oc.year, oc.wardName, oc.sectorID, js.subSector, oc.closed_businesses
 FROM stays_competitive sc JOIN open_to_closed oc ON sc.sectorID=oc.sectorID AND
-    sc.wardName=oc.wardName JOIN JobSectors js ON js.sectorID=sc.sectorID 
-WHERE open_to_closed.year
-ORDER BY wardName, sectorID;
+    sc.wardName=oc.wardName JOIN JobSectors js ON js.sectorID=sc.sectorID
+ORDER BY oc.year, oc.wardName, oc.sectorID;
