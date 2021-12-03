@@ -10,14 +10,15 @@
 \i data.txt
 \echo
 \echo  -------------------- Investigative Question 1: ------------------ 
-\echo  How did
+\echo  Given that COVID-19 impacted the city in multiple areas, what do the general statistics of the City of Toronto tell us about the future of the Job Market?
 \echo
 \i sql-queries/queries-question1.sql
 \echo
 \echo  -------------------- Investigative Question 2: ------------------ 
+\echo In individual wards, does competition between companies of similar sectors cause more closed businesses?
 \echo
 \i sql-queries/queries-question2.sql
 \echo
-\echo  -------------------- Investigative Question 2: ------------------
+\echo  -------------------- Investigative Question 3: ------------------
 \echo
 \i sql-queries/queries-question3.sql
