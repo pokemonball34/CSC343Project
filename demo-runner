@@ -1,6 +1,6 @@
 \echo --- (a) Load schema and data --------------------------------------------------
-\i schema.ddl
-\COPY CityOfTorontoStatistics FROM data/toronto-stats-data.csv with csv header
+\i sql-queries/schema.ddl
+\COPY CityOfTorontoStatistics FROM cleaned/sample-data/toronto-stats-data.csv with csv header
 \COPY JobSectors FROM cleaned/sector-data.csv with csv header
 \COPY Wards FROM cleaned/ward-data.csv with csv header
 \COPY Companies FROM cleaned/company-data.csv with csv header
