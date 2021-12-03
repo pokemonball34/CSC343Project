@@ -24,12 +24,11 @@ CREATE TABLE JobSectors (
     PRIMARY KEY (sectorID)
 );
 
-CREATE TABLE NewEstablishments (
+CREATE TABLE Wards (
     wardName TEXT NOT NULL,
-    year INTEGER NOT NULL,
     newEstablishments INTEGER NOT NULL DEFAULT 0,
 
-    PRIMARY KEY (wardName, year),
+    PRIMARY KEY (wardName),
     CONSTRAINT validyear
         CHECK (year = 2019 OR year = 2020 OR year = 2021)
 );
@@ -45,7 +44,7 @@ CREATE TABLE Companies (
 
     PRIMARY KEY (companyID),
     FOREIGN KEY (sectorID) REFERENCES JobSectors(sectorID),
-    FOREIGN KEY (wardName) REFERENCES NewEstablishments(wardName)
+    FOREIGN KEY (wardName) REFERENCES Wards(wardName)
 );
 
 CREATE TABLE CityOfTorontoStatistics (
