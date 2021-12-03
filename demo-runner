@@ -20,6 +20,6 @@ SELECT count(*) FROM CityOfTorontoStatistics;
 \echo
 \echo --- (d) Show SOME rows from each table ----------------------------------------
 SELECT * FROM Companies WHERE sectorID='611' and wardName='Scarborough Centre';
-SELECT * FROM Wards;
+SELECT * FROM Wards WHERE WardName SIMILAR TO '(Scarborough)%';
 SELECT * FROM JobSectors WHERE sectorName = 'Information and cultural industries';
 SELECT * FROM CityOfTorontoStatistics WHERE year = 2019;
