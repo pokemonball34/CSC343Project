@@ -3,12 +3,13 @@ import numpy as np
 import glob
 
 # Companies Table
-col_list = ['Category', 'Licence No.', 'Operating Name', 'Licence Address Line 1']
+col_list = ['Category', 'Licence No.', 'Operating Name', 'Licence Address Line 1', 'Cancel Date']
 col_names = {
     "Category": "companyType",
     "Licence No.": "companyID",
     "Operating Name": "companyName",
-    "Licence Address Line 1": "address"
+    "Licence Address Line 1": "address",
+    "Cancel Date": "closeDate"
 }
 com_data = pd.read_csv('Datasets/business_licences.csv', usecols=col_list)
 com_data = com_data.rename(columns=col_names)
@@ -120,7 +121,7 @@ com_data['companyID'] = range(1, len(com_data) + 1)
 com_data['numOfEmployees'] = ''
 com_data['sectorID'] = com_data['companyType'].map(categoryToSectorID)
 com_data.drop(columns=['companyType', 'address'], inplace=True)
-print(com_data)
+print(list(com_data))
 
 com_data.to_csv('company-data.csv', index=False, header=False)
 
