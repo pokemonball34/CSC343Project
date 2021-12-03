@@ -12,12 +12,7 @@ CREATE TABLE JobSectors (
 
 CREATE TABLE Wards (
     wardName TEXT NOT NULL,
-    year INTEGER NOT NULL,
-    -- newEstablishments INTEGER NOT NULL DEFAULT 0,
-
-    PRIMARY KEY (wardName, year),
-    CONSTRAINT validyear
-        CHECK (year = 2019 OR year = 2020 OR year = 2021)
+    PRIMARY KEY (wardName)
 );
 
 
