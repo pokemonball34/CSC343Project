@@ -15,11 +15,11 @@ CREATE TABLE
 --LOADING DATA
 csc343h-caterovv=> \COPY CityOfTorontoStatistics FROM data/toronto-stats-data.csv with csv header
 COPY 36
-csc343h-caterovv=> \COPY Wards(wardName) FROM ward-data.csv with csv header
+csc343h-caterovv=> \COPY Wards(wardName) FROM cleaned/ward-data.csv with csv header
 COPY 74
-csc343h-caterovv=> \COPY JobSectors FROM sector-data.csv with csv header
+csc343h-caterovv=> \COPY JobSectors FROM cleaned/sector-data.csv with csv header
 COPY 101
-csc343h-caterovv=> \COPY Companies FROM company-data.csv with csv header
+csc343h-caterovv=> \COPY Companies FROM cleaned/company-data.csv with csv header
 COPY 75919
 
 
@@ -31,7 +31,7 @@ csc343h-caterovv=> \d
  jobmarket | cityoftorontostatistics | table | caterovv
  jobmarket | companies               | table | caterovv
  jobmarket | jobsectors              | table | caterovv
- jobmarket | newestablishments       | table | caterovv
+ jobmarket | wards                   | table | caterovv
 (4 rows)
 
 csc343h-caterovv=> \d Companies
