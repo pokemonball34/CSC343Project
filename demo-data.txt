@@ -130,13 +130,9 @@ csc343h-caterovv=> SELECT * FROM Companies WHERE sectorID='611' and wardName='Sc
        664 | EX EXAMINER DRIVER EDUCATION & TRAINING | 2006-11-14 | Scarborough Centre |                |      611
 (2 rows)
 
-csc343h-caterovv=> SELECT * FROM Wards;
+csc343h-caterovv=> SELECT * FROM Wards WHERE WardName SIMILAR TO '(Scarborough)%';
         wardname
 ------------------------
- York Centre
- Willowdale
- University-Rosedale
- Beaches-East York
  Scarborough Southwest
  Scarborough-Rouge Park
  Scarborough North
@@ -144,23 +140,7 @@ csc343h-caterovv=> SELECT * FROM Wards;
  Scarborough Centre
  Scarborough-Agincourt
  Scarborough East
- Don Valley West
- Toronto-St. Paul's
- Parkdale-High Park
- Etobicoke North
- Etobicoke-Lakeshore
- Etobicoke Centre
- Eglinton-Lawrence
- Don Valley North
- Don Valley East
- Davenport
- Toronto Centre
- York South-Weston
- Toronto-Danforth
- Spadina-Fort York
- York West
- Trinity-Spadina
-(27 rows)
+(7 rows)
 
 csc343h-caterovv=> SELECT * FROM JobSectors WHERE sectorName = 'Information and cultural industries';
  sectorid |             sectorname              |                   subsector
