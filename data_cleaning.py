@@ -68,11 +68,11 @@ categoryToSectorID = {
     'TEMPORARY SIGN - NEW DEVELOPMENT': 238,
     'TEMPORARY SIGN - GROUND-MOUNTED': 238,
     'TEMPORARY SIGN - PORTABLE': 238,
-    'PERMANENT FIREWORKS VENDOR': 423,
-    'TEMPORARY FIREWORKS VENDOR (UNDER 25 KG)': 423,
-    'TEMPORARY FIREWORKS VENDOR (OVER 25 KG)': 423,
-    'TEMPORARY LEASE FIREWORKS VENDOR': 423,
-    'TEMPORARY MOBILE FIREWORKS VENDOR': 423,
+    'PERMANENT FIREWORKS VENDOR': 418,
+    'TEMPORARY FIREWORKS VENDOR (UNDER 25 KG)': 418,
+    'TEMPORARY FIREWORKS VENDOR (OVER 25 KG)': 418,
+    'TEMPORARY LEASE FIREWORKS VENDOR': 418,
+    'TEMPORARY MOBILE FIREWORKS VENDOR': 418,
     'CLOTHING DROP BOX LOCATION PERMIT': 448,
     'SIDEWALK VENDING': 454,
     'MOBILE VENDING (FOOD TRUCK)': 722,
@@ -81,7 +81,7 @@ categoryToSectorID = {
     'SIDEWALK CAFE': 722,
     'MARKETING DISPLAY': 541,
     'HAWKER/PEDLAR ON FOOT': 722,
-    'TRANSIENT TRADER': 425,
+    'TRANSIENT TRADER': 448,
     'INSULATION INSTALLER': 238,
     'BUILDING CLEANER': 561,
     'ADVERTISING': 541,
@@ -122,6 +122,7 @@ com_data['numOfEmployees'] = ''
 com_data['sectorID'] = com_data['companyType'].map(categoryToSectorID)
 com_data.drop(columns=['companyType', 'address'], inplace=True)
 print(list(com_data))
+print(com_data.get('wardName').drop_duplicates())
 
 com_data.to_csv('company-data.csv', index=False, header=False)
 
