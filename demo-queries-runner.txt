@@ -7,17 +7,19 @@
 \echo -------------------- Loading schema and data: -------------------- 
 \echo
 \i schema.ddl
-\i data.txt
+\COPY CityOfTorontoStatistics FROM data/toronto-stats-data.csv with csv header
 \echo
 \echo  -------------------- Investigative Question 1: ------------------ 
-\echo  How did
+\echo  Given that COVID-19 impacted the city in multiple areas, what do the general statistics of the City of Toronto tell us about the future of the Job Market?
 \echo
 \i sql-queries/queries-question1.sql
 \echo
 \echo  -------------------- Investigative Question 2: ------------------ 
-\echo
+\echo  In individual wards, does competition between companies of similar sectors cause more closed businesses?
+
 \i sql-queries/queries-question2.sql
 \echo
 \echo  -------------------- Investigative Question 2: ------------------
+\echo  With respect to companies that have shifted to working from home, how much is invested into employee training? From this, what effect does this have on company performance?
 \echo
 \i sql-queries/queries-question3.sql
