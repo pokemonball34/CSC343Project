@@ -20,6 +20,7 @@
 \echo  -------------------- Investigative Question 2: ------------------ 
 \echo  In individual wards, does competition between companies of similar sectors cause more closed businesses?
 \i sql-queries/queries-question2.sql
+SELECT * FROM q2;
 \echo
 \echo  -------------------- Investigative Question 3: ------------------
 \echo  With respect to companies that have shifted to working from home, how much is invested into employee training? From this, what effect does this have on company performance?
