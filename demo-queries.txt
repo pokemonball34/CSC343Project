@@ -55,6 +55,76 @@ psql:sql-queries/queries-question2.sql:95: NOTICE:  view "stays_competitive" doe
 DROP VIEW
 CREATE VIEW
 INSERT 0 5034
+csc343h-caterovv=> SELECT * FROM 
+ year |        wardname        | sectorid |                                 subsector                                  | closed
+------+------------------------+----------+----------------------------------------------------------------------------+--------
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      4
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      5
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      6
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      7
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      9
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     10
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     11
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     12
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     13
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     14
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     15
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     16
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     17
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     18
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     25
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     27
+ 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |      1
+ 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |      2
+ 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |      3
+ 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |      7
+ 2019 | Beaches-East York      |      418 | Miscellaneous merchant wholesalers                                         |      1
+ 2019 | Beaches-East York      |      418 | Miscellaneous merchant wholesalers                                         |      4
+ 2019 | Beaches-East York      |      448 | Clothing and clothing accessories stores                                   |      1
+ 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      1
+ 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      2
+ 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      3
+ 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      5
+ 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      6
+ 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      7
+ 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      1
+ 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      2
+ 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      3
+ 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      4
+ 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      5
+ 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      6
+ 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      7
+ 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |      1
+ 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |      2
+ 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |      3
+ 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |      5
+ 2019 | Beaches-East York      |      541 | Professional, scientific and technical services                            |      1
+ ....
+  2021 | York West              |      445 | Food and beverage stores                                                   |     81
+ 2021 | York West              |      445 | Food and beverage stores                                                   |    132
+ 2021 | York West              |      445 | Food and beverage stores                                                   |    156
+ 2021 | York West              |      722 | Food services and drinking places                                          |     10
+ 2021 | York West              |      722 | Food services and drinking places                                          |     15
+ 2021 | York West              |      722 | Food services and drinking places                                          |     18
+ 2021 | York West              |      722 | Food services and drinking places                                          |     19
+ 2021 | York West              |      722 | Food services and drinking places                                          |     23
+ 2021 | York West              |      722 | Food services and drinking places                                          |     28
+ 2021 | York West              |      722 | Food services and drinking places                                          |     30
+ 2021 | York West              |      722 | Food services and drinking places                                          |     33
+ 2021 | York West              |      722 | Food services and drinking places                                          |     36
+ 2021 | York West              |      722 | Food services and drinking places                                          |     45
+ 2021 | York West              |      722 | Food services and drinking places                                          |     49
+ 2021 | York West              |      722 | Food services and drinking places                                          |     61
+ 2021 | York West              |      722 | Food services and drinking places                                          |     62
+ 2021 | York West              |      722 | Food services and drinking places                                          |     64
+ 2021 | York West              |      722 | Food services and drinking places                                          |     70
+ 2021 | York West              |      722 | Food services and drinking places                                          |     83
+ 2021 | York West              |      722 | Food services and drinking places                                          |     87
+ 2021 | York West              |      722 | Food services and drinking places                                          |     90
+ 2021 | York West              |      722 | Food services and drinking places                                          |    152
+ 2021 | York West              |      722 | Food services and drinking places                                          |    255
+ 2021 | York West              |      722 | Food services and drinking places                                          |    356
+(5034 rows)
 
 
 -------------------- Investigative Question 3: ------------------ 
