@@ -54,77 +54,75 @@ CREATE VIEW
 psql:sql-queries/queries-question2.sql:95: NOTICE:  view "stays_competitive" does not exist, skipping
 DROP VIEW
 CREATE VIEW
-INSERT 0 5034
-csc343h-caterovv=> SELECT * FROM 
+INSERT 0 425
+csc343h-caterovv=> SELECT * FROM q2
  year |        wardname        | sectorid |                                 subsector                                  | closed
-------+------------------------+----------+----------------------------------------------------------------------------+--------
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      4
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      5
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      6
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      7
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |      9
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     10
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     11
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     12
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     13
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     14
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     15
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     16
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     17
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     18
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     25
- 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |     27
- 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |      1
- 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |      2
- 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |      3
- 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |      7
- 2019 | Beaches-East York      |      418 | Miscellaneous merchant wholesalers                                         |      1
- 2019 | Beaches-East York      |      418 | Miscellaneous merchant wholesalers                                         |      4
- 2019 | Beaches-East York      |      448 | Clothing and clothing accessories stores                                   |      1
- 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      1
- 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      2
- 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      3
- 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      5
- 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      6
- 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |      7
- 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      1
- 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      2
- 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      3
- 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      4
- 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      5
- 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      6
- 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |      7
- 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |      1
- 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |      2
- 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |      3
- 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |      5
- 2019 | Beaches-East York      |      541 | Professional, scientific and technical services                            |      1
- ....
-  2021 | York West              |      445 | Food and beverage stores                                                   |     81
- 2021 | York West              |      445 | Food and beverage stores                                                   |    132
- 2021 | York West              |      445 | Food and beverage stores                                                   |    156
- 2021 | York West              |      722 | Food services and drinking places                                          |     10
- 2021 | York West              |      722 | Food services and drinking places                                          |     15
- 2021 | York West              |      722 | Food services and drinking places                                          |     18
- 2021 | York West              |      722 | Food services and drinking places                                          |     19
- 2021 | York West              |      722 | Food services and drinking places                                          |     23
- 2021 | York West              |      722 | Food services and drinking places                                          |     28
- 2021 | York West              |      722 | Food services and drinking places                                          |     30
- 2021 | York West              |      722 | Food services and drinking places                                          |     33
- 2021 | York West              |      722 | Food services and drinking places                                          |     36
- 2021 | York West              |      722 | Food services and drinking places                                          |     45
- 2021 | York West              |      722 | Food services and drinking places                                          |     49
- 2021 | York West              |      722 | Food services and drinking places                                          |     61
- 2021 | York West              |      722 | Food services and drinking places                                          |     62
- 2021 | York West              |      722 | Food services and drinking places                                          |     64
- 2021 | York West              |      722 | Food services and drinking places                                          |     70
- 2021 | York West              |      722 | Food services and drinking places                                          |     83
- 2021 | York West              |      722 | Food services and drinking places                                          |     87
- 2021 | York West              |      722 | Food services and drinking places                                          |     90
- 2021 | York West              |      722 | Food services and drinking places                                          |    152
- 2021 | York West              |      722 | Food services and drinking places                                          |    255
- 2021 | York West              |      722 | Food services and drinking places                                          |    356
-(5034 rows)
+------+------------------------+----------+----------------------------------------------------------------------------+---------
+ 2019 | Beaches-East York      |      238 | Specialty trade contractors                                                |  302610
+ 2019 | Beaches-East York      |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |   77028
+ 2019 | Beaches-East York      |      418 | Miscellaneous merchant wholesalers                                         |   44016
+ 2019 | Beaches-East York      |      448 | Clothing and clothing accessories stores                                   |   24759
+ 2019 | Beaches-East York      |      485 | Transit and ground passenger transportation                                |  396144
+ 2019 | Beaches-East York      |      488 | Support activities for transportation                                      |  178815
+ 2019 | Beaches-East York      |      532 | Rental and leasing services                                                |   77028
+ 2019 | Beaches-East York      |      541 | Professional, scientific and technical services                            |   41265
+ 2019 | Beaches-East York      |      561 | Administrative and support services                                        |    2751
+ 2019 | Beaches-East York      |      722 | Food services and drinking places                                          |  121044
+ 2019 | Beaches-East York      |      913 | Local, municipal and regional public administration                        |  165060
+ 2019 | Davenport              |      236 | Construction of buildings                                                  |  121044
+ 2019 | Davenport              |      238 | Specialty trade contractors                                                |  665742
+ 2019 | Davenport              |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |   77028
+ 2019 | Davenport              |      418 | Miscellaneous merchant wholesalers                                         |   44016
+ 2019 | Davenport              |      453 | Miscellaneous store retailers                                              |   46767
+ 2019 | Davenport              |      488 | Support activities for transportation                                      |   35763
+ 2019 | Davenport              |      532 | Rental and leasing services                                                |  539196
+ 2019 | Davenport              |      561 | Administrative and support services                                        |    2751
+ 2019 | Davenport              |      621 | Ambulatory health care services                                            |   46767
+ 2019 | Davenport              |      713 | Amusement, gambling and recreation industries                              |   38514
+ 2019 | Davenport              |      722 | Food services and drinking places                                          |  181566
+ 2019 | Davenport              |      913 | Local, municipal and regional public administration                        |  165060
+ 2019 | Don Valley East        |      236 | Construction of buildings                                                  |  726264
+ 2019 | Don Valley East        |      238 | Specialty trade contractors                                                |  121044
+ 2019 | Don Valley East        |      415 | Motor vehicle and motor vehicle parts and accessories merchant wholesalers |  134799
+ 2019 | Don Valley East        |      445 | Food and beverage stores                                                   |  907830
+ 2019 | Don Valley East        |      453 | Miscellaneous store retailers                                              |  561204
+ ...
+ 2021 | Scarborough-Rouge Park |      711 | Performing arts, spectator sports and related industries                   |    5502
+ 2021 | Scarborough-Rouge Park |      722 | Food services and drinking places                                          |  786786
+ 2021 | Scarborough-Rouge Park |      812 | Personal and laundry services                                              | 1089396
+ 2021 | Toronto Centre         |      454 | Non-store retailers                                                        |    2751
+ 2021 | Toronto Centre         |      522 | Credit intermediation and related activities                               |    8253
+ 2021 | Toronto Centre         |      532 | Rental and leasing services                                                |   71526
+ 2021 | Toronto-Danforth       |      236 | Construction of buildings                                                  |  121044
+ 2021 | Toronto-Danforth       |      238 | Specialty trade contractors                                                |  665742
+ 2021 | Toronto-Danforth       |      485 | Transit and ground passenger transportation                                |  264096
+ 2021 | Toronto-Danforth       |      541 | Professional, scientific and technical services                            |   22008
+ 2021 | Toronto-St. Paul's     |      236 | Construction of buildings                                                  |  786786
+ 2021 | Toronto-St. Paul's     |      418 | Miscellaneous merchant wholesalers                                         |  154056
+ 2021 | Toronto-St. Paul's     |      445 | Food and beverage stores                                                   |  121044
+ 2021 | Toronto-St. Paul's     |      722 | Food services and drinking places                                          |  121044
+ 2021 | Toronto-St. Paul's     |      812 | Personal and laundry services                                              |  665742
+ 2021 | Trinity-Spadina        |      236 | Construction of buildings                                                  |  423654
+ 2021 | Trinity-Spadina        |      238 | Specialty trade contractors                                                |  847308
+ 2021 | Trinity-Spadina        |      454 | Non-store retailers                                                        |    2751
+ 2021 | Trinity-Spadina        |      711 | Performing arts, spectator sports and related industries                   |    5502
+ 2021 | Willowdale             |      236 | Construction of buildings                                                  |  121044
+ 2021 | Willowdale             |      445 | Food and beverage stores                                                   |  242088
+ 2021 | Willowdale             |      722 | Food services and drinking places                                          |  121044
+ 2021 | Willowdale             |      812 | Personal and laundry services                                              |  665742
+ 2021 | York Centre            |      236 | Construction of buildings                                                  |  242088
+ 2021 | York Centre            |      238 | Specialty trade contractors                                                |  665742
+ 2021 | York Centre            |      445 | Food and beverage stores                                                   |  121044
+ 2021 | York Centre            |      722 | Food services and drinking places                                          |  181566
+ 2021 | York Centre            |      812 | Personal and laundry services                                              |  665742
+ 2021 | York South-Weston      |      236 | Construction of buildings                                                  |   60522
+ 2021 | York South-Weston      |      238 | Specialty trade contractors                                                |   60522
+ 2021 | York South-Weston      |      485 | Transit and ground passenger transportation                                |  264096
+ 2021 | York South-Weston      |      488 | Support activities for transportation                                      |  178815
+ 2021 | York South-Weston      |      722 | Food services and drinking places                                          |  121044
+ 2021 | York West              |      445 | Food and beverage stores                                                   |  484176
+ 2021 | York West              |      722 | Food services and drinking places                                          |  363132
+(425 rows)
 
 
 -------------------- Investigative Question 3: ------------------ 
