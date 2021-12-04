@@ -21,7 +21,7 @@
 \echo  In individual wards, does competition between companies of similar sectors cause more closed businesses?
 \i sql-queries/queries-question2.sql
 \echo
-\echo  -------------------- Investigative Question 2: ------------------
+\echo  -------------------- Investigative Question 3: ------------------
 \echo  With respect to companies that have shifted to working from home, how much is invested into employee training? From this, what effect does this have on company performance?
 \echo
 \i sql-queries/queries-question3.sql
