@@ -1,8 +1,14 @@
 SET SEARCH_PATH TO JobMarket;  
 DROP TABLE IF exists q2 CASCADE;  
   
-CREATE TABLE q2(  
-       
+CREATE TABLE q2(
+    year INT NOT NULL,
+    wardName TEXT NOT NULL,
+    sectorID INT NOT NULL,
+    subSector TEXT NOT NULL,
+    closed INT NOT NULL,
+    
+    PRIMARY KEY (year, wardName, sectorID)
 );  
   
 -- Do this for each of the views that define your intermediate steps.    
