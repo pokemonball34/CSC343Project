@@ -33,7 +33,29 @@ csc343h-caterovv=> \i sql-queries/queries-question1.sql
 -- In individual wards, does competition between companies of similar sectors cause more closed businesses?
 
 csc343h-caterovv=> \i sql-queries/queries-question2.sql
-...
+SET
+psql:sql-queries/queries-question2.sql:2: NOTICE:  table "q2" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:sql-queries/queries-question2.sql:15: NOTICE:  view "intermediate_step" does not exist, skipping
+DROP VIEW
+psql:sql-queries/queries-question2.sql:21: NOTICE:  view "closed_businesses" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:sql-queries/queries-question2.sql:43: NOTICE:  view "open_businesses" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:sql-queries/queries-question2.sql:62: NOTICE:  view "open_to_closed" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:sql-queries/queries-question2.sql:86: NOTICE:  view "sector_ward_is_competitive" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:sql-queries/queries-question2.sql:95: NOTICE:  view "stays_competitive" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+INSERT 0 5034
+
 
 -------------------- Investigative Question 3: ------------------ 
 -- With respect to companies that have shifted to working from home, how much is invested into employee training? From this, what effect does this have on company performance?
