@@ -103,7 +103,7 @@ WHERE s1.is_competitive AND s1.year=2019 AND
 -- Your query that answers the question goes below the "insert into" line:
 -- 
 insert into q2
-SELECT DISTINCT oc.year, oc.wardName, oc.sectorID, js.subSector, oc.closed_businesses
+SELECT DISTINCT oc.year, oc.wardName, oc.sectorID, js.subSector, COUNT(oc.closed_businesses) as Closed
 FROM stays_competitive sc JOIN open_to_closed oc ON sc.sectorID=oc.sectorID AND
     sc.wardName=oc.wardName JOIN JobSectors js ON js.sectorID=sc.sectorID
 GROUP BY oc.year, oc.wardName, oc.sectorID, js.subSector
