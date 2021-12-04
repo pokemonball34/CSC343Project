@@ -7,7 +7,10 @@
 \echo -------------------- Loading schema and data: -------------------- 
 \echo
 \i schema.ddl
-\COPY CityOfTorontoStatistics FROM data/toronto-stats-data.csv with csv header
+\COPY CityOfTorontoStatistics FROM cleaned/sample-data/toronto-stats-data.csv with csv header
+\COPY JobSectors FROM cleaned/sector-data.csv with csv header
+\COPY Wards(wardName) FROM cleaned/ward-data.csv with csv header
+\COPY Companies FROM cleaned/company-data.csv with csv header
 \echo
 \echo  -------------------- Investigative Question 1: ------------------ 
 \echo  Given that COVID-19 impacted the city in multiple areas, what do the general statistics of the City of Toronto tell us about the future of the Job Market?
