@@ -106,4 +106,5 @@ insert into q2
 SELECT DISTINCT oc.year, oc.wardName, oc.sectorID, js.subSector, oc.closed_businesses
 FROM stays_competitive sc JOIN open_to_closed oc ON sc.sectorID=oc.sectorID AND
     sc.wardName=oc.wardName JOIN JobSectors js ON js.sectorID=sc.sectorID
+GROUP BY oc.year, oc.wardName, oc.sectorID, js.subSector
 ORDER BY oc.year, oc.wardName, oc.sectorID;
