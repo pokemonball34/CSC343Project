@@ -7,8 +7,6 @@ CREATE TABLE q2(
     sectorID INT NOT NULL,
     subSector TEXT NOT NULL,
     closed INT NOT NULL,
-    
-    PRIMARY KEY (year, wardName, sectorID)
 );  
   
 -- Do this for each of the views that define your intermediate steps.    
