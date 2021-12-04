@@ -1,0 +1,42 @@
+--- (a) Load schema and data --------------------------------------------------
+csc343h-caterovv-> \i schema.ddl
+psql:schema.ddl:1: NOTICE:  drop cascades to 3 other objects
+DETAIL:  drop cascades to table jobsectors
+drop cascades to table wards
+drop cascades to table cityoftorontostatistics
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+
+--LOADING DATA
+csc343h-caterovv=> \COPY CityOfTorontoStatistics FROM data/toronto-stats-data.csv with csv header
+COPY 36
+csc343h-caterovv=> \COPY JobSectors FROM cleaned/sector-data.csv with csv header
+COPY 101
+csc343h-caterovv=> \COPY Wards(wardName) FROM cleaned/ward-data.csv with csv header
+COPY 27
+csc343h-caterovv=> \COPY Companies FROM cleaned/company-data.csv with csv header
+COPY 76831
+
+-------------------- Investigative Question 1: ------------------ 
+-- Given that COVID-19 impacted the city in multiple areas, what do the general statistics of the City of Toronto tell us about the future of the Job Market?
+
+csc343h-caterovv=> \i sql-queries/queries-question1.sql
+...
+
+
+-------------------- Investigative Question 2: ------------------ 
+-- In individual wards, does competition between companies of similar sectors cause more closed businesses?
+
+csc343h-caterovv=> \i sql-queries/queries-question2.sql
+...
+
+-------------------- Investigative Question 3: ------------------ 
+-- With respect to companies that have shifted to working from home, how much is invested into employee training? From this, what effect does this have on company performance?
+
+\i sql-queries/queries-question3.sql
+...
