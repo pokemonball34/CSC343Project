@@ -1,0 +1,25 @@
+\echo --- (a) Load schema and data --------------------------------------------------
+\i sql-queries/schema.ddl
+\COPY CityOfTorontoStatistics FROM cleaned/sample-data/toronto-stats-data.csv with csv header
+\COPY JobSectors FROM cleaned/sector-data.csv with csv header
+\COPY Wards FROM cleaned/ward-data.csv with csv header
+\COPY Companies FROM cleaned/company-data.csv with csv header
+\echo
+\echo --- (b) Run \d on each table --------------------------------------------------
+\d
+\d Companies
+\d Wards
+\d JobSectors
+\d CityOfTorontoStatistics
+\echo
+\echo --- (c) Run SELECT count(*) on each table -------------------------------------
+SELECT count(*) FROM Companies;
+SELECT count(*) FROM Wards;
+SELECT count(*) FROM JobSectors;
+SELECT count(*) FROM CityOfTorontoStatistics;
+\echo
+\echo --- (d) Show SOME rows from each table ----------------------------------------
+SELECT * FROM Companies WHERE sectorID='611' and wardName='Scarborough Centre';
+SELECT * FROM Wards WHERE WardName SIMILAR TO '(Scarborough)%';
+SELECT * FROM JobSectors WHERE sectorName = 'Information and cultural industries';
+SELECT * FROM CityOfTorontoStatistics WHERE year = 2019;

@@ -15,12 +15,12 @@ CREATE TABLE
 --LOADING DATA
 csc343h-caterovv=> \COPY CityOfTorontoStatistics FROM data/toronto-stats-data.csv with csv header
 COPY 36
-csc343h-caterovv=> \COPY Wards(wardName) FROM cleaned/ward-data.csv with csv header
-COPY 74
 csc343h-caterovv=> \COPY JobSectors FROM cleaned/sector-data.csv with csv header
 COPY 101
+csc343h-caterovv=> \COPY Wards(wardName) FROM cleaned/ward-data.csv with csv header
+COPY 27
 csc343h-caterovv=> \COPY Companies FROM cleaned/company-data.csv with csv header
-COPY 75919
+COPY 76831
 
 
 --- (b) Run \d on each table --------------------------------------------------
@@ -36,53 +36,60 @@ csc343h-caterovv=> \d
 
 csc343h-caterovv=> \d Companies
                 Table "jobmarket.companies"
-     Column     |  Type   | Collation | Nullable | Default 
+     Column     |  Type   | Collation | Nullable | Default
 ----------------+---------+-----------+----------+---------
- companyid      | text    |           | not null | 
- companyname    | text    |           | not null | 
- postalcode     | text    |           | not null |
+ companyid      | integer |           | not null |
+ companyname    | text    |           | not null |
+ closedate      | date    |           |          |
  wardname       | text    |           |          |
  numofemployees | integer |           |          |
+ sectorid       | integer |           | not null |
 Indexes:
     "companies_pkey" PRIMARY KEY, btree (companyid)
+Foreign-key constraints:
+    "companies_sectorid_fkey" FOREIGN KEY (sectorid) REFERENCES jobsectors(sectorid)
+    "companies_wardname_fkey" FOREIGN KEY (wardname) REFERENCES wards(wardname)
 
 
-csc343h-caterovv=> \d NewEstablishments
-             Table "jobmarket.newestablishments"
-      Column       |  Type   | Collation | Nullable | Default 
--------------------+---------+-----------+----------+---------
- wardname          | text    |           | not null | 
- year              | integer |           | not null | 
- newestablishments | integer |           | not null | 0
+csc343h-caterovv=> \d Wards
+             Table "jobmarket.wards"
+  Column  | Type | Collation | Nullable | Default
+----------+------+-----------+----------+---------
+ wardname | text |           | not null |
 Indexes:
-    "newestablishments_pkey" PRIMARY KEY, btree (wardname, year)
-Check constraints:
-    "validyear" CHECK (year = 2019 OR year = 2020 OR year = 2021)
+    "wards_pkey" PRIMARY KEY, btree (wardname)
+Referenced by:
+    TABLE "companies" CONSTRAINT "companies_wardname_fkey" FOREIGN KEY (wardname) REFERENCES wards(wardname)
     
 
 csc343h-caterovv=> \d JobSectors
-            Table "jobmarket.jobsectors"
+             Table "jobmarket.jobsectors"
    Column   |  Type   | Collation | Nullable | Default
 ------------+---------+-----------+----------+---------
  sectorid   | integer |           | not null |
  sectorname | text    |           | not null |
  subsector  | text    |           | not null |
 Indexes:
-    "jobsectors_pkey" PRIMARY KEY, btree (sectorname, subsector)
+    "jobsectors_pkey" PRIMARY KEY, btree (sectorid)
+Referenced by:
+    TABLE "companies" CONSTRAINT "companies_sectorid_fkey" FOREIGN KEY (sectorid) REFERENCES jobsectors(sectorid)
     
 csc343h-caterovv=> \d CityOfTorontoStatistics
                           Table "jobmarket.cityoftorontostatistics"
-                  Column                  |       Type       | Collation | Nullable | Default 
+                  Column                  |       Type       | Collation | Nullable | Default
 ------------------------------------------+------------------+-----------+----------+---------
- year                                     | integer          |           | not null | 
- month                                    | text             |           | not null | 
- emprate                                  | double precision |           | not null | 
- numofemployedcityoftorontoresidents      | integer          |           | not null | 
- percentageofselfemployedtorontoresidents | double precision |           | not null | 
- percentageofvacantofficespace            | double precision |           | not null | 
- numofemploymentinsurancebeneficiaries    | integer          |           | not null | 
- numofbusinesslicencesrenewed             | integer          |           | not null | 
- numofnewbusinesslicencesissued           | integer          |           | not null | 
+ month                                    | text             |           | not null |
+ year                                     | integer          |           | not null |
+ employmentrate                           | double precision |           | not null |
+ numofemployedcityoftorontoresidents      | integer          |           | not null |
+ avghoursatmainjob                        | double precision |           | not null |
+ percentageofselfemployedtorontoresidents | double precision |           | not null |
+ percentageofvacantofficespace            | double precision |           | not null |
+ numofeibeneficiaries                     | integer          |           | not null |
+ numofbusinesslicencesrenewed             | integer          |           | not null |
+ numofbusincessbankruptcies               | integer          |           | not null |
+ numofnewbusinesslicencesissued           | integer          |           | not null |
+ numoftorontohomessold                    | integer          |           | not null |
 Indexes:
     "cityoftorontostatistics_pkey" PRIMARY KEY, btree (year, month)
 
@@ -90,15 +97,15 @@ Indexes:
 --- (c) Run SELECT count(*) on each table -------------------------------------
 
 csc343h-caterovv=> SELECT count(*) FROM Companies;
-count
+ count
 -------
- 75919
+ 76831
 (1 row)
 
-csc343h-caterovv=> SELECT count(*) FROM NewEstablishments;
- count 
+csc343h-caterovv=> SELECT count(*) FROM Wards;
+ count
 -------
-    74
+    27
 (1 row)
 
 csc343h-caterovv=> SELECT count(*) FROM JobSectors;
@@ -108,74 +115,34 @@ csc343h-caterovv=> SELECT count(*) FROM JobSectors;
 (1 row)
 
 csc343h-caterovv=> SELECT count(*) FROM CityOfTorontoStatistics;
- count 
+ count
 -------
-     0
+    36
 (1 row)
 
 
 --- (d) Show SOME rows from each table ----------------------------------------
 
-csc343h-caterovv=> SELECT * FROM Companies WHERE postalcode='M9A';
-  companyid  |             companyname              | postalcode | wardname | numofemployees
--------------+--------------------------------------+------------+----------+----------------
- T85-3008021 | MASTERCRAFT PROFESSIONAL RENOVATIONS | M9A        |          |
- T85-0245369 | GOLAS CONSTRUCTION & RENOVATION CO   | M9A        |          |
- T85-3106473 | MAYFIELD CONSTRUCTION AND DESIGN     | M9A        |          |
- T85-3360662 | ROZAFA                               | M9A        |          |
- T85-3251177 | SASA DESIGN CRAFT                    | M9A        |          |
- T85-3594534 | PETER F H WEHRSPANN                  | M9A        |          |
- T85-3368419 | HARTSON HOME IMPROVEMENTS            | M9A        |          |
- T85-3951508 | TOTAL HOME SERVICE                   | M9A        |          |
- T85-3102571 | ALLTRADE RENOVATIONS                 | M9A        |          |
- T85-3953349 | R.D. CONSTRUCTION SERVICES           | M9A        |          |
- T85-3082310 | ALBA                                 | M9A        |          |
- T85-4307300 | BB ALUMINUM                          | M9A        |          |
- T85-3957856 | RA-DO CONSTRUCTION & ROOFING         | M9A        |          |
- T85-4542063 | G LINE RENOVATIONS                   | M9A        |          |
- T85-3090445 | JACK ROOFING                         | M9A        |          |
- T85-4649609 | STRAZOS                              | M9A        |          |
- T85-4064408 | ON TIME CONTRACTING                  | M9A        |          |
- T85-4421731 | LM CONSTRUCTION                      | M9A        |          |
- T87-0001377 | F AND T TEDESCO CONT LTD             | M9A        |          |
- T87-4314161 | AAA DRAIN COMPANY                    | M9A        |          |
- T92-0000064 | HORNIAK PLUMBING&HEATING             | M9A        |          |
- T94-3126320 | HORNIAK PLUMBING                     | M9A        |          |
- T94-0223299 | P.J. PLUMBING CO.                    | M9A        |          |
- T94-3014528 | LAKESHORE PLUMBING                   | M9A        |          |
- V15-4647683 | THE URBAN ASIAN                      | M9A        |          |
-(25 rows)
+csc343h-caterovv=> SELECT * FROM Companies WHERE sectorID='611' and wardName='Scarborough Centre';
+ companyid |               companyname               | closedate  |      wardname      | numofemployees | sectorid
+-----------+-----------------------------------------+------------+--------------------+----------------+----------
+       474 | SEARS DRIVER TRAINING                   | 2001-09-30 | Scarborough Centre |                |      611
+       664 | EX EXAMINER DRIVER EDUCATION & TRAINING | 2006-11-14 | Scarborough Centre |                |      611
+(2 rows)
 
-csc343h-caterovv=> SELECT * FROM NewEstablishments WHERE year = 2019;
-        wardname        | year | newestablishments
-------------------------+------+-------------------
- York Centre            | 2019 |                 0
- Willowdale             | 2019 |                 0
- University-Rosedale    | 2019 |                 0
- Beaches-East York      | 2019 |                 0
- Scarborough Southwest  | 2019 |                 0
- Scarborough-Rouge Park | 2019 |                 0
- Scarborough North      | 2019 |                 0
- Scarborough-Guildwood  | 2019 |                 0
- Scarborough Centre     | 2019 |                 0
- Scarborough-Agincourt  | 2019 |                 0
- Don Valley West        | 2019 |                 0
- Toronto-St. Paul's     | 2019 |                 0
- Parkdale-High Park     | 2019 |                 0
- Etobicoke North        | 2019 |                 0
- Etobicoke-Lakeshore    | 2019 |                 0
- Etobicoke Centre       | 2019 |                 0
- Eglinton-Lawrence      | 2019 |                 0
- Don Valley North       | 2019 |                 0
- Don Valley East        | 2019 |                 0
- Davenport              | 2019 |                 0
- Toronto Centre         | 2019 |                 0
- York South-Weston      | 2019 |                 0
- Toronto-Danforth       | 2019 |                 0
- Spadina-Fort York      | 2019 |                 0
+csc343h-caterovv=> SELECT * FROM Wards WHERE WardName SIMILAR TO '(Scarborough)%';
+        wardname
+------------------------
+ Scarborough Southwest
+ Scarborough-Rouge Park
+ Scarborough North
+ Scarborough-Guildwood
+ Scarborough Centre
+ Scarborough-Agincourt
+ Scarborough East
+(7 rows)
 
-csc343h-caterovv=> SELECT * FROM JobSectors WHERE sectorName = 'Real estate and rental and leasing';
-SELECT * FROM JobSectors WHERE sectorName = 'Information and cultural industries';
+csc343h-caterovv=> SELECT * FROM JobSectors WHERE sectorName = 'Information and cultural industries';
  sectorid |             sectorname              |                   subsector
 ----------+-------------------------------------+------------------------------------------------
       511 | Information and cultural industries | Publishing industries
@@ -187,9 +154,10 @@ SELECT * FROM JobSectors WHERE sectorName = 'Information and cultural industries
 (6 rows)
 
 csc343h-caterovv=> SELECT * FROM CityOfTorontoStatistics WHERE year = 2019;
- year | month | emprate | numofemployedcityoftorontoresidents | percentageofselfemployedtorontoresidents | percentageofvacantofficespace | numofemploymentinsurancebeneficiaries | numofbusinesslicencesrenewed | numofnewbusinesslicencesissued 
-------+-------+---------+-------------------------------------+------------------------------------------+-------------------------------+---------------------------------------+------------------------------+--------------------------------
-(0 rows)
+  month  | year | employmentrate | numofemployedcityoftorontoresidents | avghoursatmainjob | percentageofselfemployedtorontoresidents | percentageofvacantofficespace | numofeibeneficiaries | numofbusinesslicencesrenewed | numofbusincessbankruptcies | numofnewbusinesslicencesissued | numoftorontohomessold
+---------+------+----------------+-------------------------------------+-------------------+------------------------------------------+-------------------------------+----------------------+------------------------------+----------------------------+--------------------------------+-----------------------
+ January | 2019 |           57.8 |                             1383000 |             35.59 |                                     17.5 |                           4.1 |                20680 |                         3859 |                         60 |                            677 |                  1422
+(1 row)
 
 
 
